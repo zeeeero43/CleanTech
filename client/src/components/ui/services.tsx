@@ -1,6 +1,7 @@
 import { Card, CardContent } from "./card";
 import { Button } from "./button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export function Services() {
   const services = [
@@ -66,13 +67,14 @@ export function Services() {
                 <p className="text-[hsl(220,9%,43%)] mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                <Button 
-                  variant="link" 
-                  onClick={scrollToContact}
-                  className="text-[hsl(187,96%,43%)] hover:text-[hsl(213,78%,32%)] font-medium p-0"
-                >
-                  Mehr erfahren <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
+                <Link href={service.href}>
+                  <Button 
+                    variant="link" 
+                    className="text-[hsl(187,96%,43%)] hover:text-[hsl(213,78%,32%)] font-medium p-0"
+                  >
+                    Mehr erfahren <ArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

@@ -40,9 +40,9 @@ export function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center space-x-2">
-            <img src={logoPath} alt="SILBERREH Logo" className="w-8 h-8 object-contain" />
+            <img src={logoPath} alt="SILBERREH Logo" className="w-16 h-16 object-contain" />
             <div className="text-2xl font-bold text-[hsl(213,78%,32%)]">SILBERREH</div>
-            <div className="hidden sm:block text-sm text-[hsl(215,16%,47%)] ml-1">GmbH</div>
+            <div className="text-sm text-[hsl(215,16%,47%)] ml-1">GmbH</div>
           </Link>
           
           {/* Desktop Navigation */}
@@ -95,7 +95,7 @@ export function Navigation() {
             <SheetContent side="right" className="w-80">
               <div className="flex justify-between items-center mb-8">
                 <div className="flex items-center space-x-2">
-                  <img src={logoPath} alt="SILBERREH Logo" className="w-6 h-6 object-contain" />
+                  <img src={logoPath} alt="SILBERREH Logo" className="w-12 h-12 object-contain" />
                   <div className="text-xl font-bold text-[hsl(213,78%,32%)]">SILBERREH</div>
                   <div className="text-sm text-[hsl(215,16%,47%)] ml-1">GmbH</div>
                 </div>
