@@ -27,11 +27,9 @@ export function Navigation() {
   // Handle pending scroll after navigation
   useEffect(() => {
     if (pendingScroll && location === "/") {
-      const timer = setTimeout(() => {
-        scrollToSection(pendingScroll);
-        setPendingScroll(null);
-      }, 100); // Small delay to ensure page is rendered
-      return () => clearTimeout(timer);
+      // Use browser's native hash navigation for more reliable scrolling
+      window.location.hash = pendingScroll;
+      setPendingScroll(null);
     }
   }, [location, pendingScroll]);
 
