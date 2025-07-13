@@ -8,8 +8,6 @@ import logoPath from "@assets/svgexport-1 (11)_1752413065010.png";
 export function Navigation() {
   const [location, navigate] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [pendingScroll, setPendingScroll] = useState<string | null>(null);
-
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Dienstleistungen", href: "/#services" },
@@ -24,41 +22,37 @@ export function Navigation() {
     }
   };
 
-  // Handle pending scroll after navigation
+  // Handle hash navigation when on homepage
   useEffect(() => {
-    if (pendingScroll && location === "/") {
-      // Multiple attempts to ensure scrolling works
-      let attempts = 0;
-      const maxAttempts = 10;
-      
+    if (location === "/" && window.location.hash) {
+      const sectionId = window.location.hash.replace('#', '');
       const attemptScroll = () => {
-        attempts++;
-        const element = document.getElementById(pendingScroll);
+        const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
-          setPendingScroll(null);
-        } else if (attempts < maxAttempts) {
-          setTimeout(attemptScroll, 100);
+          // Clear the hash after scrolling
+          window.history.replaceState(null, '', '/');
         } else {
-          setPendingScroll(null);
+          // Try again after a short delay
+          setTimeout(attemptScroll, 100);
         }
       };
       
-      // Start first attempt after a brief delay
-      setTimeout(attemptScroll, 100);
+      // Start scrolling after a brief delay
+      setTimeout(attemptScroll, 200);
     }
-  }, [location, pendingScroll]);
+  }, [location]);
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     if (href.includes("#")) {
       const sectionId = href.split("#")[1];
       if (location === "/" || location === "") {
-        // Small delay to ensure DOM is ready
+        // Already on homepage, just scroll
         setTimeout(() => scrollToSection(sectionId), 100);
       } else {
-        setPendingScroll(sectionId);
-        navigate("/");
+        // Navigate to homepage with hash
+        window.location.href = href;
       }
     }
   };
@@ -66,11 +60,11 @@ export function Navigation() {
   const handleQuoteClick = () => {
     setIsOpen(false);
     if (location === "/" || location === "") {
-      // Small delay to ensure DOM is ready
+      // Already on homepage, just scroll
       setTimeout(() => scrollToSection("contact"), 100);
     } else {
-      setPendingScroll("contact");
-      navigate("/");
+      // Navigate to homepage with hash
+      window.location.href = "/#contact";
     }
   };
 
