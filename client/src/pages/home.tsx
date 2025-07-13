@@ -16,15 +16,28 @@ import {
   Euro,
   Award,
   Tag,
-  Star
+  Star,
+  ChevronDown
 } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useState } from "react";
 
 export default function Home() {
+  const [openFaqItems, setOpenFaqItems] = useState<string[]>([]);
+
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const toggleFaqItem = (item: string) => {
+    setOpenFaqItems(prev => 
+      prev.includes(item) 
+        ? prev.filter(i => i !== item)
+        : [...prev, item]
+    );
   };
 
   const usps = [
@@ -78,6 +91,39 @@ export default function Home() {
       company: "Praxisleiter, Zahnarztpraxis Weber",
       content: "Zuverlässige Büroreinigung seit über 3 Jahren. Flexibel, freundlich und immer sauber. Wir sind sehr zufrieden!",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=60&h=60"
+    }
+  ];
+
+  const faqItems = [
+    {
+      id: "services",
+      question: "Welche Reinigungsdienstleistungen bieten Sie an?",
+      answer: "Wir bieten professionelle Reinigungsdienstleistungen für Industrie, Büros, Bauschluss und Fenster. Unsere Dienstleistungen umfassen regelmäßige Wartung, Tiefenreinigung und spezialisierte Reinigungsverfahren."
+    },
+    {
+      id: "area",
+      question: "In welchen Gebieten sind Sie tätig?",
+      answer: "Wir sind hauptsächlich im Raum Bergheim, Köln, Düsseldorf und dem gesamten Rhein-Erft-Kreis tätig. Für größere Projekte können wir auch darüber hinaus tätig werden."
+    },
+    {
+      id: "quote",
+      question: "Wie erhalte ich ein Angebot?",
+      answer: "Sie können uns über unser Kontaktformular, per Telefon (+49 2271 9877397) oder WhatsApp kontaktieren. Wir erstellen Ihnen gerne ein kostenloses und unverbindliches Angebot."
+    },
+    {
+      id: "equipment",
+      question: "Bringen Sie Ihre eigenen Reinigungsmittel mit?",
+      answer: "Ja, wir verwenden professionelle Reinigungsgeräte und hochwertige, umweltfreundliche Reinigungsmittel. Alle Materialien sind im Preis inbegriffen."
+    },
+    {
+      id: "insurance",
+      question: "Sind Sie versichert?",
+      answer: "Ja, wir sind vollständig versichert. Unsere Haftpflichtversicherung deckt alle Schäden ab, die während der Reinigungsarbeiten entstehen könnten."
+    },
+    {
+      id: "emergency",
+      question: "Bieten Sie Notfallreinigungen an?",
+      answer: "Ja, wir bieten 24/7 Notfallreinigungen an. Kontaktieren Sie uns telefonisch für dringende Reinigungsarbeiten."
     }
   ];
 
@@ -285,6 +331,72 @@ export default function Home() {
                     <div className="text-3xl font-bold text-[hsl(213,78%,32%)]">100%</div>
                     <div className="text-sm text-[hsl(220,9%,43%)]">Zufriedenheit</div>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[hsl(213,78%,32%)] mb-6">
+              Häufige Fragen
+            </h2>
+            <p className="text-xl text-[hsl(220,9%,43%)] max-w-3xl mx-auto">
+              Antworten auf die wichtigsten Fragen zu unseren Reinigungsdienstleistungen
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto space-y-4">
+            {faqItems.map((item) => (
+              <Collapsible key={item.id} open={openFaqItems.includes(item.id)}>
+                <CollapsibleTrigger
+                  onClick={() => toggleFaqItem(item.id)}
+                  className="w-full p-6 glassmorphism border-0 shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 text-left flex items-center justify-between group"
+                >
+                  <h3 className="text-lg font-semibold text-[hsl(213,78%,32%)] pr-4">
+                    {item.question}
+                  </h3>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-[hsl(187,96%,43%)] transition-transform duration-300 ${
+                      openFaqItems.includes(item.id) ? 'rotate-180' : ''
+                    }`}
+                  />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-6 pb-6 glassmorphism border-0 shadow-lg rounded-b-xl -mt-3">
+                  <p className="text-[hsl(220,9%,43%)] leading-relaxed">
+                    {item.answer}
+                  </p>
+                </CollapsibleContent>
+              </Collapsible>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Card className="glassmorphism border-0 shadow-lg max-w-2xl mx-auto">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-[hsl(213,78%,32%)] mb-4">
+                  Weitere Fragen?
+                </h3>
+                <p className="text-[hsl(220,9%,43%)] mb-6">
+                  Haben Sie weitere Fragen? Kontaktieren Sie uns gerne direkt.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="tel:+4922719877397"
+                    className="bg-[hsl(213,78%,32%)] hover:bg-[hsl(213,78%,37%)] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
+                  >
+                    Jetzt anrufen
+                  </a>
+                  <Button
+                    onClick={scrollToContact}
+                    className="bg-[hsl(187,96%,43%)] hover:bg-[hsl(187,96%,48%)] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
+                  >
+                    Kontaktformular
+                  </Button>
                 </div>
               </CardContent>
             </Card>

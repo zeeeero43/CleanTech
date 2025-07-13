@@ -35,6 +35,15 @@ export function Navigation() {
     }
   };
 
+  const handleQuoteClick = () => {
+    setIsOpen(false);
+    if (location === "/" || location === "") {
+      scrollToSection("contact");
+    } else {
+      window.location.href = "/#contact";
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,7 +87,7 @@ export function Navigation() {
               <span className="font-medium">+49 2271 9877397</span>
             </a>
             <Button 
-              onClick={() => handleNavClick("/#contact")}
+              onClick={handleQuoteClick}
               className="cta-button text-white px-6 py-2 rounded-full font-medium"
             >
               Angebot einholen
@@ -132,7 +141,7 @@ export function Navigation() {
                     <span>+49 2271 9877397</span>
                   </a>
                   <Button 
-                    onClick={() => handleNavClick("/#contact")}
+                    onClick={handleQuoteClick}
                     className="cta-button text-white px-6 py-3 rounded-full font-medium w-full"
                   >
                     Angebot einholen

@@ -14,8 +14,6 @@ import Bueroreinigung from "@/pages/services/bueroreinigung";
 import Fensterreinigung from "@/pages/services/fensterreinigung";
 import Impressum from "@/pages/legal/impressum";
 import Datenschutz from "@/pages/legal/datenschutz";
-import FAQ from "@/pages/legal/faq";
-
 function Router() {
   const [location] = useLocation();
 
@@ -34,7 +32,6 @@ function Router() {
       <Route path="/services/fensterreinigung" component={Fensterreinigung} />
       <Route path="/legal/impressum" component={Impressum} />
       <Route path="/legal/datenschutz" component={Datenschutz} />
-      <Route path="/legal/faq" component={FAQ} />
       <Route component={NotFound} />
     </Switch>
   );

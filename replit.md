@@ -10,6 +10,23 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 2025)
 
+### FAQ Integration Complete
+- **Date**: July 13, 2025
+- **Changes**:
+  - Successfully integrated FAQ sections into all service pages
+  - Added service-specific FAQ content for Industriereinigung, Bauschlussreinigung, Büroreinigung, and Fensterreinigung
+  - Implemented collapsible FAQ functionality with ChevronDown icons
+  - Added useState management for FAQ item toggling
+  - Created consistent FAQ styling across all service pages
+  - Removed standalone FAQ page and integrated questions into relevant service pages
+
+### Google Maps Integration
+- **Date**: July 13, 2025
+- **Changes**:
+  - Added Google Maps iframe to contact page showing company location
+  - Embedded map shows SILBERREH GmbH at Kentener Wiesen 39a, 50126 Bergheim
+  - Enhanced contact page with visual location reference
+
 ### Email Functionality Implementation
 - **Date**: July 13, 2025
 - **Changes**: 

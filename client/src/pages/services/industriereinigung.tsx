@@ -6,14 +6,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SEO } from "@/lib/seo";
-import { Factory, Check, ArrowRight, Shield, Clock, Award, Target, Cog, CheckCircle, Wrench, Zap } from "lucide-react";
+import { Factory, Check, ArrowRight, Shield, Clock, Award, Target, Cog, CheckCircle, Wrench, Zap, ChevronDown } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useState } from "react";
 
 export default function Industriereinigung() {
+  const [openFaqItems, setOpenFaqItems] = useState<string[]>([]);
+  
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const toggleFaqItem = (item: string) => {
+    setOpenFaqItems(prev => 
+      prev.includes(item) 
+        ? prev.filter(i => i !== item)
+        : [...prev, item]
+    );
   };
 
   const features = [
@@ -38,6 +50,29 @@ export default function Industriereinigung() {
     "Förderbänder und Transportsysteme"
   ];
 
+  const faqItems = [
+    {
+      id: "frequency",
+      question: "Wie oft sollte eine Industriereinigung durchgeführt werden?",
+      answer: "Das hängt von der Art der Industrie und den Produktionsprozessen ab. In der Regel empfehlen wir wöchentliche oder monatliche Reinigungsintervalle für Produktionsanlagen."
+    },
+    {
+      id: "safety",
+      question: "Welche Sicherheitsvorkehrungen werden getroffen?",
+      answer: "Wir führen alle Arbeiten nach den neuesten Sicherheitsstandards durch. Unsere Mitarbeiter sind geschult und verwenden persönliche Schutzausrüstung. Wir sind vollständig versichert."
+    },
+    {
+      id: "chemicals",
+      question: "Welche Reinigungsmittel werden verwendet?",
+      answer: "Wir verwenden industriespezifische, umweltfreundliche Reinigungsmittel, die für verschiedene Materialien und Verunreinigungen geeignet sind. Alle Chemikalien sind sicher und zugelassen."
+    },
+    {
+      id: "downtime",
+      question: "Können Sie außerhalb der Produktionszeiten reinigen?",
+      answer: "Ja, wir passen unsere Arbeitszeiten an Ihre Produktionszyklen an. Wir können auch nachts oder am Wochenende arbeiten, um Betriebsunterbrechungen zu minimieren."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <SEO
@@ -51,7 +86,7 @@ export default function Industriereinigung() {
       {/* Hero Section - Increased padding */}
       <section className="pt-32 pb-24 bg-gradient-to-r from-[hsl(213,78%,32%)] to-[hsl(187,96%,43%)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-white py-24">
+          <div className="text-center text-white py-16">
             <Factory className="w-16 h-16 mx-auto mb-6" />
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
               Industriereinigung Bergheim
@@ -403,6 +438,45 @@ export default function Industriereinigung() {
             <div>
               <ContactForm />
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section */}
+      <section className="py-20 bg-[hsl(220,13%,97%)]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[hsl(213,78%,32%)] mb-6">
+              Häufige Fragen - Industriereinigung
+            </h2>
+            <p className="text-xl text-[hsl(220,9%,43%)] max-w-3xl mx-auto">
+              Antworten auf die wichtigsten Fragen zur Industriereinigung
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqItems.map((item) => (
+              <Collapsible key={item.id} open={openFaqItems.includes(item.id)}>
+                <CollapsibleTrigger
+                  onClick={() => toggleFaqItem(item.id)}
+                  className="w-full p-6 glassmorphism border-0 shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 text-left flex items-center justify-between group"
+                >
+                  <h3 className="text-lg font-semibold text-[hsl(213,78%,32%)] pr-4">
+                    {item.question}
+                  </h3>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-[hsl(187,96%,43%)] transition-transform duration-300 ${
+                      openFaqItems.includes(item.id) ? 'rotate-180' : ''
+                    }`}
+                  />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-6 pb-6 glassmorphism border-0 shadow-lg rounded-b-xl -mt-3">
+                  <p className="text-[hsl(220,9%,43%)] leading-relaxed">
+                    {item.answer}
+                  </p>
+                </CollapsibleContent>
+              </Collapsible>
+            ))}
           </div>
         </div>
       </section>

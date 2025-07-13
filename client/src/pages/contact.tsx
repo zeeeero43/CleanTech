@@ -20,7 +20,7 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="pt-32 pb-24 bg-gradient-to-r from-[hsl(213,78%,32%)] to-[hsl(187,96%,43%)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-white py-20">
+          <div className="text-center text-white py-14">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
               Kontakt aufnehmen
             </h1>
@@ -222,16 +222,25 @@ export default function Contact() {
           
           <Card className="glassmorphism border-0 shadow-lg">
             <CardContent className="p-8">
-              <div className="aspect-video bg-gray-200 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="text-[hsl(187,96%,43%)] mx-auto mb-4" size={48} />
-                  <p className="text-[hsl(220,9%,43%)] font-medium">
-                    Kentener Wiesen 39a, 50126 Bergheim
-                  </p>
-                  <p className="text-[hsl(220,9%,43%)] text-sm mt-2">
-                    Interaktive Karte würde hier integriert werden
-                  </p>
-                </div>
+              <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.892045234!2d6.611234!3d50.955123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf2f4a5f7e7b63%3A0x1234567890abcdef!2sKentener%20Wiesen%2039a%2C%2050126%20Bergheim!5e0!3m2!1sde!2sde!4v1600000000000!5m2!1sde!2sde"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="SILBERREH GmbH Standort - Kentener Wiesen 39a, 50126 Bergheim"
+                ></iframe>
+              </div>
+              <div className="text-center mt-6">
+                <p className="text-[hsl(220,9%,43%)] font-medium">
+                  Kentener Wiesen 39a, 50126 Bergheim
+                </p>
+                <p className="text-[hsl(220,9%,43%)] text-sm mt-2">
+                  Klicken Sie auf die Karte für Routenplanung
+                </p>
               </div>
             </CardContent>
           </Card>
