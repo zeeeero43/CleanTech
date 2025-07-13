@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { z } from "zod";
 import { insertContactRequestSchema } from "@shared/schema";
 import { storage } from "./storage";
+import { sendContactNotification } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -13,8 +14,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const contactRequest = await storage.createContactRequest(validatedData);
       
-      // In a real application, you would send an email here
-      console.log("New contact request received:", contactRequest);
+      // Send email notification
+      await sendContactNotification(contactRequest);
       
       res.json({ 
         success: true, 
