@@ -7,6 +7,7 @@ import { FloatingElements } from "@/components/ui/floating-elements";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/lib/seo";
+import aboutImage from "@assets/mittlere-aufnahme-einer-frau-die-drinnen-putzt-min_1752415170427.jpg";
 import { 
   Handshake, 
   Wrench, 
@@ -313,7 +314,7 @@ export default function Home() {
             <Card className="glassmorphism border-0 shadow-lg">
               <CardContent className="p-8">
                 <img 
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src={aboutImage} 
                   alt="Professional cleaning team at work" 
                   className="w-full h-80 object-cover rounded-xl mb-6"
                 />

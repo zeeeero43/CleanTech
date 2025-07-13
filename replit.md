@@ -10,6 +10,19 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 2025)
 
+### Image Replacement and Assets Update
+- **Date**: July 13, 2025
+- **Changes**:
+  - Replaced all homepage images with user-provided professional cleaning photos
+  - Updated hero section with high-quality indoor cleaning professional image
+  - Replaced all service section images with authentic cleaning service photos:
+    - Industriereinigung: Professional industrial cleaner in protective equipment
+    - Bauschlussreinigung: Construction worker with concrete equipment
+    - Büro- & Gewerbereinigung: Office cleaning team in professional environment
+    - Fenster- & Glasreinigung: Professional window cleaning service
+  - Updated "Über SILBERREH" section with same professional cleaning image as hero
+  - All images properly imported and optimized for web performance
+
 ### Navigation and UX Improvements
 - **Date**: July 13, 2025
 - **Changes**:
@@ -18,7 +31,7 @@ Preferred communication style: Simple, everyday language.
   - Removed FAQ link from footer navigation
   - Enhanced FAQ design with improved button consistency and text formatting
   - Reduced padding under hero titles on all service pages for better spacing
-  - Navigation now uses wouter routing system with pendingScroll state for smooth cross-page navigation
+  - Navigation now uses browser native hash navigation for reliable cross-page scrolling
 
 ### FAQ Integration Complete
 - **Date**: July 13, 2025
