@@ -1,0 +1,270 @@
+# LLM-Prompt: Vollständige SILBERREH Reinigungswebsite mit React/Next.js
+
+## ANWEISUNG AN DAS LLM:
+Erstelle eine **vollständige, moderne React/Next.js Website** für SILBERREH GmbH Reinigungsdienste. Die Website muss production-ready sein, alle rechtlichen Anforderungen erfüllen und maximale Conversions generieren.
+
+## DESIGN-SYSTEM:
+
+### Farbpalette (CSS-Variablen verwenden):
+```css
+:root {
+  --primary: #1e3a8a;        /* Marineblau */
+  --secondary: #64748b;       /* Silbergrau */
+  --accent: #06b6d4;         /* Türkis */
+  --background: #ffffff;      /* Weiß */
+  --surface: #f8fafc;        /* Hellgrau */
+  --text: #374151;           /* Anthrazit */
+  --text-light: #6b7280;     /* Hellgrau Text */
+}
+```
+
+### Design-Prinzipien:
+- **Glassmorphism-Effekte** für moderne Optik
+- **Subtile Schatten und Verläufe** für Tiefe  
+- **Großzügige Whitespace** für Premium-Gefühl
+- **Mikro-Animationen** bei Hover/Interactions
+- **Mobile-First responsive Design**
+
+## VOLLSTÄNDIGE WEBSITE-STRUKTUR:
+
+### 1. HAUPTSEITE (Homepage) - Alle Komponenten:
+
+#### Header/Navigation:
+- Sticky Navigation mit Logo "SILBERREH GmbH"
+- Navigation Items: Home, Dienstleistungen, Über uns, Kontakt
+- Prominenter CTA-Button: "Angebot einholen"
+- Mobile Hamburger-Menü mit Animations
+- Click-to-Call Button: "+49 2271 9877397"
+
+#### Hero-Sektion:
+- **Headline**: "Professionelle Reinigungslösungen für höchste Ansprüche"
+- **Subline**: "Ihr vertrauensvoller Partner für makellose Sauberkeit in Industrie, Gewerbe und Privat. Kostenlose Beratung & Angebote."
+- **Dual CTAs**: "Kostenloses Angebot anfordern" + "Jetzt anrufen"
+- **Trust-Badges**: "20+ Jahre Erfahrung", "Vollversichert", "100% Zufriedenheitsgarantie"
+- **Background**: Professionelles Hero-Image mit Overlay
+
+#### Dienstleistungen-Grid (4 Service-Karten):
+1. **Industriereinigung**
+   - SVG-Icon (Factory/Gear)
+   - "Maschinenreinigung, Produktionsanlagen, Chemie-/Säurebehandlungen. Hochdruck- und Heißreinigung für optimale Betriebseffizienz."
+   
+2. **Bauschlussreinigung**  
+   - SVG-Icon (Building/Construction)
+   - "Komplette Bauschlussreinigung inklusive Wertstofftrennung und fachgerechter Entsorgung. Übergabebereit in kürzester Zeit."
+   
+3. **Büro- & Gewerbereinigung**
+   - SVG-Icon (Office Building)
+   - "Regelmäßige Reinigung für Büros, Praxen und Geschäfte. Flexible Zeiten und individuelle Reinigungspläne."
+   
+4. **Fenster- & Glasreinigung**
+   - SVG-Icon (Window/Squeegee)
+   - "Streifenfreie Ergebnisse durch Osmose-Technik und professionelle Steiger-Ausrüstung. Auch schwer erreichbare Bereiche."
+
+#### Warum SILBERREH? (6 USP-Grid):
+1. **Kostenlose Beratung**: "Unverbindliche Besichtigung und Kostenvoranschlag"
+2. **Modernste Technik**: "Professionelle Ausrüstung für beste Ergebnisse"  
+3. **Umweltfreundlich**: "Nachhaltige Reinigungsmittel und Verfahren"
+4. **Vollversichert**: "Umfassender Versicherungsschutz für Ihre Sicherheit"
+5. **Flexible Termine**: "Anpassung an Ihre Arbeitszeiten und Bedürfnisse"
+6. **Faire Preise**: "Transparente Kostenstruktur ohne versteckte Gebühren"
+
+#### 3-Schritte-Prozess (mit Icons & Animationen):
+1. **Kontakt aufnehmen** → 2. **Kostenlose Beratung** → 3. **Professionelle Reinigung**
+
+#### Kundenstimmen (3-4 Testimonials):
+- Authentische Bewertungen mit Namen/Firmen
+- 5-Sterne-Rating-System
+- Profilbilder (Placeholder oder echte)
+
+#### Kontaktformular-Sektion:
+**Formular-Felder:**
+- Reinigungsart (Select: Industriereinigung, Bauschlussreinigung, Büroreinigung, Fensterreinigung, Grundreinigung, Sonstiges)
+- Reinigungshäufigkeit (Select: Einmalig, Wöchentlich, Monatlich, Nach Bedarf)
+- Größe/Umfang (Input: "m² oder Anzahl Räume")
+- Wunschtermin (Date-Picker)
+- Kontaktdaten: Name*, Telefon*, Email*, Firma (optional)
+- Nachricht (Textarea: "Zusätzliche Wünsche oder Besonderheiten")
+- DSGVO-Checkbox*: "Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu"
+- Submit-Button: "Kostenloses Angebot anfordern"
+
+**Kontaktinfos (neben Formular):**
+- **Telefon**: +49 2271 9877397 (Click-to-Call)
+- **Adresse**: Kentener Wiesen 39a, 50126 Bergheim
+- **Öffnungszeiten**: Mo-Fr: 8:00-17:00 Uhr, So: Geschlossen
+- **Notfall-Hotline**: 24/7 verfügbar
+
+#### Footer (4-spaltig):
+1. **Unternehmen**: Logo, Kurzbeschreibung, Zertifikate
+2. **Dienstleistungen**: Links zu allen Services  
+3. **Kontakt**: Alle Kontaktdaten
+4. **Rechtliches**: Impressum, Datenschutz, AGB
+
+### 2. ZUSÄTZLICHE SEITEN (vollständig):
+
+#### Service-Detailseiten:
+- `/dienstleistungen/industriereinigung`
+- `/dienstleistungen/bauschlussreinigung`  
+- `/dienstleistungen/bueroreinigung`
+- `/dienstleistungen/fensterreinigung`
+
+Jede Seite mit:
+- Detaillierte Leistungsbeschreibung
+- Anwendungsbereiche und Beispiele
+- Technische Ausstattung
+- Referenzprojekte
+- Individuelle CTA für diese Dienstleistung
+
+#### Über uns (/ueber-uns):
+- Firmengeschichte und Erfahrung  
+- Team-Vorstellung
+- Zertifikate und Qualifikationen
+- Ausrüstung und Technologie
+- Umweltengagement
+
+#### Kontakt (/kontakt):
+- Erweiterte Kontaktseite
+- Google Maps Integration
+- Anfahrtsbeschreibung
+- Bürozeiten und Erreichbarkeit
+- Kontaktformular (erweitert)
+
+### 3. RECHTLICHE SEITEN (vollständig ausformuliert):
+
+#### Impressum (/impressum):
+```
+Angaben gemäß § 5 TMG:
+
+SILBERREH GmbH
+Kentener Wiesen 39a
+50126 Bergheim
+
+Vertreten durch:
+Geschäftsführer: [Name einsetzen]
+
+Kontakt:
+Telefon: +49 2271 9877397
+E-Mail: info@silberreh.de
+
+Registereintrag:
+Eintragung im Handelsregister
+Registergericht: [Amtsgericht einsetzen]
+Registernummer: [HRB-Nummer einsetzen]
+
+Umsatzsteuer-ID:
+Umsatzsteuer-Identifikationsnummer nach §27a UStG: [USt-IdNr. einsetzen]
+
+Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+[Name und Adresse einsetzen]
+
+Haftungsausschluss:
+[Vollständiger Haftungsausschluss für Inhalte und Links]
+```
+
+#### Datenschutzerklärung (/datenschutz):
+**Vollständige DSGVO-konforme Datenschutzerklärung:**
+- Verantwortlicher und Kontaktdaten
+- Arten der verarbeiteten Daten
+- Kategorien betroffener Personen
+- Zwecke der Verarbeitung
+- Rechtsgrundlagen
+- Übermittlung in Drittländer
+- Speicherdauer
+- Rechte der betroffenen Personen
+- Widerspruchsrecht
+- Cookies und Tracking
+- Kontaktformular-Datenverarbeitung
+- SSL-Verschlüsselung
+- Recht auf Beschwerde
+
+#### AGB (/agb):
+**Allgemeine Geschäftsbedingungen für Reinigungsdienstleistungen:**
+- Geltungsbereich und Vertragspartner
+- Vertragsschluss und Leistungsumfang  
+- Preise und Zahlungsbedingungen
+- Terminvereinbarung und Durchführung
+- Mitwirkungspflichten des Auftraggebers
+- Haftung und Gewährleistung
+- Versicherung und Schäden
+- Kündigung und Vertragsbeendigung
+- Datenschutz und Vertraulichkeit
+- Schlussbestimmungen
+
+## FUNKTIONALE ANFORDERUNGEN:
+
+### Interaktive Features:
+- **Smooth Scrolling Navigation** zu Sektionen
+- **Mobile-responsive Hamburger-Menü**
+- **Formular-Validierung** mit Echtzeit-Feedback
+- **Click-to-Call** für alle Telefonnummern
+- **WhatsApp-Chat-Button** (floating, sticky)
+- **Scroll-to-Top Button**
+- **Lazy Loading** für Bilder und Komponenten
+
+### Conversion-Optimierungen:
+- **Sticky Contact-Bar** (mobil)
+- **Multiple strategisch platzierte CTAs**
+- **Exit-Intent-Erkennung** (optional)
+- **Trust-Signale** in jeder Sektion
+- **Urgency-Elemente** ("Begrenzte Termine verfügbar")
+- **Social Proof** (Kundenstimmen, Referenzen)
+
+### SEO & Performance:
+- **Meta-Tags und Open Graph** für alle Seiten
+- **Structured Data/Schema Markup**
+- **Lokales SEO** (Bergheim, NRW, Rhein-Erft-Kreis)
+- **Sitemap.xml** Generation
+- **Robots.txt** Optimierung
+- **Core Web Vitals** Optimierung
+
+## TECHNISCHE SPECIFICATIONS:
+
+### Styling-Approach:
+- **Moderne CSS** (Grid, Flexbox, Custom Properties)
+- **Responsive Breakpoints**: Mobile (320px+), Tablet (768px+), Desktop (1024px+)
+- **Touch-optimierte Interaktionen** (min. 44px Buttons)
+- **Accessibility**: WCAG 2.1 AA Standards
+- **Performance**: Lazy Loading, Code Splitting
+
+### State Management:
+- **React Hooks** für lokalen State
+- **Form-Handling** mit Validierung
+- **Error-Handling** für API-Calls
+- **Loading-States** für UX
+
+### Content-Optimierung:
+- **SEO-optimierte Headlines** mit Keywords
+- **Lokale Keywords**: "Reinigung Bergheim", "Reinigungsfirma NRW"
+- **Call-to-Actions** in jedem Abschnitt
+- **Vertrauenswürdige, professionelle Tonalität**
+
+## DELIVERABLES:
+Erstelle eine **vollständige, funktionsfähige React/Next.js Website** mit:
+
+1. **Hauptseite** mit allen Komponenten
+2. **Service-Detailseiten** (4 Stück)
+3. **Über uns Seite**
+4. **Kontaktseite** 
+5. **Rechtliche Seiten** (Impressum, Datenschutz, AGB)
+6. **Responsive Navigation und Footer**
+7. **Kontaktformular** mit Validierung
+8. **SEO-Optimierung** für alle Seiten
+
+## QUALITÄTSKONTROLLE:
+- ✅ Alle Links und Navigation funktionieren
+- ✅ Kontaktformular mit Validierung  
+- ✅ Mobile-responsive auf allen Geräten
+- ✅ Performance-optimiert
+- ✅ DSGVO-konform und rechtssicher
+- ✅ SEO-optimiert für lokale Suche
+- ✅ Accessibility-Standards erfüllt
+- ✅ Conversion-optimiert für Lead-Generierung
+
+## WICHTIGE HINWEISE:
+- **Verwende professionelle, authentische Texte** (keine Platzhalter)
+- **Implementiere alle genannten Features** vollständig
+- **Code muss production-ready** sein
+- **Optimiere für maximale Conversions**
+- **Fokus auf B2B-Kunden** (höhere Auftragswerte)
+- **Vertrauen und Professionalität** in jedem Element
+
+**ERSTELLE JETZT DIE VOLLSTÄNDIGE REACT/NEXT.JS WEBSITE FÜR SILBERREH GMBH!**
