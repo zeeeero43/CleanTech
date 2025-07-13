@@ -27,13 +27,25 @@ export function Navigation() {
   // Handle pending scroll after navigation
   useEffect(() => {
     if (pendingScroll && location === "/") {
-      // Use setTimeout to ensure DOM is ready
-      const timeoutId = setTimeout(() => {
-        scrollToSection(pendingScroll);
-        setPendingScroll(null);
-      }, 300);
+      // Multiple attempts to ensure scrolling works
+      let attempts = 0;
+      const maxAttempts = 10;
       
-      return () => clearTimeout(timeoutId);
+      const attemptScroll = () => {
+        attempts++;
+        const element = document.getElementById(pendingScroll);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          setPendingScroll(null);
+        } else if (attempts < maxAttempts) {
+          setTimeout(attemptScroll, 100);
+        } else {
+          setPendingScroll(null);
+        }
+      };
+      
+      // Start first attempt after a brief delay
+      setTimeout(attemptScroll, 100);
     }
   }, [location, pendingScroll]);
 
