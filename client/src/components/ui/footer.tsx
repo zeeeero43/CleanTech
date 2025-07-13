@@ -86,11 +86,7 @@ export function Footer() {
                   Datenschutz
                 </Link>
               </li>
-              <li>
-                <Link href="/legal/faq" className="hover:text-[hsl(187,96%,43%)] transition-colors">
-                  FAQ
-                </Link>
-              </li>
+
               <li>
                 <button className="hover:text-[hsl(187,96%,43%)] transition-colors text-left">
                   Sitemap

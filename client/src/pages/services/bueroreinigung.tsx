@@ -88,10 +88,10 @@ export default function Bueroreinigung() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white py-16">
             <Building className="w-16 h-16 mx-auto mb-6" />
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
               Büroreinigung Bergheim
             </h1>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto mb-8">
+            <p className="text-xl opacity-90 max-w-3xl mx-auto mb-6">
               Professionelle Büro- und Gewerbereinigung in Bergheim und dem gesamten Rhein-Erft-Kreis. 
               Regelmäßige Reinigung für Büros, Praxen und Geschäfte mit flexiblen Zeiten.
             </p>
@@ -453,28 +453,32 @@ export default function Bueroreinigung() {
             </p>
           </div>
           
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-6">
             {faqItems.map((item) => (
-              <Collapsible key={item.id} open={openFaqItems.includes(item.id)}>
-                <CollapsibleTrigger
-                  onClick={() => toggleFaqItem(item.id)}
-                  className="w-full p-6 glassmorphism border-0 shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 text-left flex items-center justify-between group"
-                >
-                  <h3 className="text-lg font-semibold text-[hsl(213,78%,32%)] pr-4">
-                    {item.question}
-                  </h3>
-                  <ChevronDown 
-                    className={`w-5 h-5 text-[hsl(187,96%,43%)] transition-transform duration-300 ${
-                      openFaqItems.includes(item.id) ? 'rotate-180' : ''
-                    }`}
-                  />
-                </CollapsibleTrigger>
-                <CollapsibleContent className="px-6 pb-6 glassmorphism border-0 shadow-lg rounded-b-xl -mt-3">
-                  <p className="text-[hsl(220,9%,43%)] leading-relaxed">
-                    {item.answer}
-                  </p>
-                </CollapsibleContent>
-              </Collapsible>
+              <div key={item.id} className="glassmorphism border-0 shadow-lg rounded-xl overflow-hidden">
+                <Collapsible open={openFaqItems.includes(item.id)}>
+                  <CollapsibleTrigger
+                    onClick={() => toggleFaqItem(item.id)}
+                    className="w-full p-6 hover:bg-white/50 transition-all duration-300 text-left flex items-center justify-between group min-h-[80px]"
+                  >
+                    <h3 className="text-lg font-semibold text-[hsl(213,78%,32%)] pr-4 leading-snug">
+                      {item.question}
+                    </h3>
+                    <ChevronDown 
+                      className={`w-5 h-5 text-[hsl(187,96%,43%)] transition-transform duration-300 flex-shrink-0 ${
+                        openFaqItems.includes(item.id) ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="px-6 pb-6 border-t border-white/20">
+                    <div className="pt-4">
+                      <p className="text-[hsl(220,9%,43%)] leading-7 text-base">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </div>
             ))}
           </div>
         </div>

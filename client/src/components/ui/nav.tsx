@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "./button";
 import { Sheet, SheetContent, SheetTrigger } from "./sheet";
@@ -6,8 +6,9 @@ import { Menu, Phone, X } from "lucide-react";
 import logoPath from "@assets/svgexport-1 (11)_1752413065010.png";
 
 export function Navigation() {
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [pendingScroll, setPendingScroll] = useState<string | null>(null);
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -23,6 +24,17 @@ export function Navigation() {
     }
   };
 
+  // Handle pending scroll after navigation
+  useEffect(() => {
+    if (pendingScroll && location === "/") {
+      const timer = setTimeout(() => {
+        scrollToSection(pendingScroll);
+        setPendingScroll(null);
+      }, 100); // Small delay to ensure page is rendered
+      return () => clearTimeout(timer);
+    }
+  }, [location, pendingScroll]);
+
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     if (href.includes("#")) {
@@ -30,7 +42,8 @@ export function Navigation() {
       if (location === "/" || location === "") {
         scrollToSection(sectionId);
       } else {
-        window.location.href = href;
+        setPendingScroll(sectionId);
+        navigate("/");
       }
     }
   };
@@ -40,7 +53,8 @@ export function Navigation() {
     if (location === "/" || location === "") {
       scrollToSection("contact");
     } else {
-      window.location.href = "/#contact";
+      setPendingScroll("contact");
+      navigate("/");
     }
   };
 

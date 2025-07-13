@@ -48,24 +48,7 @@ export function FloatingElements() {
         </Button>
       )}
 
-      {/* Sticky Contact Bar (Mobile) */}
-      <div className="sticky-contact-bar md:hidden">
-        <div className="flex justify-between items-center">
-          <a
-            href="tel:+4922719877397"
-            className="text-white flex items-center space-x-2"
-          >
-            <Phone className="w-5 h-5" />
-            <span>Anrufen</span>
-          </a>
-          <Button
-            onClick={scrollToContact}
-            className="bg-[hsl(187,96%,43%)] hover:bg-[hsl(213,78%,32%)] text-white px-4 py-2 rounded-full font-medium"
-          >
-            Angebot
-          </Button>
-        </div>
-      </div>
+
     </>
   );
 }

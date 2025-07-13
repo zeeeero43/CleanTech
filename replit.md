@@ -10,6 +10,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 2025)
 
+### Navigation and UX Improvements
+- **Date**: July 13, 2025
+- **Changes**:
+  - Fixed navigation scroll functionality - now works correctly when navigating from service pages to home sections
+  - Removed mobile sticky contact bar that was blocking content
+  - Removed FAQ link from footer navigation
+  - Enhanced FAQ design with improved button consistency and text formatting
+  - Reduced padding under hero titles on all service pages for better spacing
+  - Navigation now uses wouter routing system with pendingScroll state for smooth cross-page navigation
+
 ### FAQ Integration Complete
 - **Date**: July 13, 2025
 - **Changes**:
