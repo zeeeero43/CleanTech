@@ -1,5 +1,6 @@
 import { Button } from "./button";
 import { Phone, FileText, Award, Shield, ThumbsUp, ChevronDown } from "lucide-react";
+import heroImage from "@assets/mittlere-aufnahme-einer-frau-die-drinnen-putzt-min_1752415170427.jpg";
 
 export function Hero() {
   const scrollToContact = () => {
@@ -14,8 +15,8 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Professional building cleaning service" 
+          src={heroImage} 
+          alt="Professional cleaning service - woman cleaning indoors" 
           className="w-full h-full object-cover" 
         />
         <div className="hero-gradient absolute inset-0"></div>
