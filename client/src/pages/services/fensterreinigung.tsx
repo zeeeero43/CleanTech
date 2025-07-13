@@ -49,7 +49,7 @@ export default function Fensterreinigung() {
       <Navigation />
       
       {/* Hero Section - Increased padding */}
-      <section className="pt-24 pb-20 bg-gradient-to-r from-[hsl(213,78%,32%)] to-[hsl(187,96%,43%)]">
+      <section className="pt-32 pb-24 bg-gradient-to-r from-[hsl(213,78%,32%)] to-[hsl(187,96%,43%)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white py-16">
             <GlassWater className="w-16 h-16 mx-auto mb-6" />

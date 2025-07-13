@@ -37,6 +37,17 @@ Preferred communication style: Simple, everyday language.
   - Better structured service feature lists
   - Improved glassmorphism effects and card layouts
 
+### Navigation and Spacing Fixes
+- **Date**: July 13, 2025
+- **Changes**:
+  - Fixed header spacing issues - titles no longer stick to header
+  - Increased top padding from pt-24 to pt-32 on all subpages
+  - Increased bottom padding from pb-12/pb-20 to pb-24 on all subpages
+  - Logo enlarged and made responsive (16x16 desktop, 12x12 mobile)
+  - GmbH now visible on mobile navigation
+  - Added auto-scroll to top functionality when navigating between pages
+  - Fixed service links on homepage to correctly navigate to subpages
+
 ## System Architecture
 
 ### Frontend Architecture
