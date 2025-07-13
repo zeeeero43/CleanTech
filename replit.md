@@ -1,0 +1,119 @@
+# SILBERREH GmbH - Cleaning Services Website
+
+## Overview
+
+This is a modern, full-stack web application for SILBERREH GmbH, a professional cleaning services company based in Bergheim, Germany. The application is built with React, TypeScript, and Express.js, featuring a responsive design with shadcn/ui components and a focus on conversion optimization for cleaning service inquiries.
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: React 18 with TypeScript
+- **Routing**: Wouter for client-side routing
+- **Styling**: Tailwind CSS with custom brand colors and glassmorphism effects
+- **UI Components**: shadcn/ui component library with Radix UI primitives
+- **State Management**: React Query (@tanstack/react-query) for server state
+- **Form Handling**: React Hook Form with Zod validation
+- **Build Tool**: Vite for development and production builds
+
+### Backend Architecture
+- **Framework**: Express.js with TypeScript
+- **Database**: Configured for PostgreSQL with Drizzle ORM
+- **Storage**: Currently using in-memory storage with interface for easy database migration
+- **API**: RESTful API with JSON responses
+- **Validation**: Zod schemas for request/response validation
+
+### Database Schema
+- **Contact Requests Table**: Stores form submissions with fields for service type, contact details, and processing status
+- **ORM**: Drizzle ORM with TypeScript-first approach
+- **Migrations**: Drizzle Kit for database schema management
+
+## Key Components
+
+### Pages
+- **Home**: Landing page with hero section, services overview, and contact form
+- **Services**: Individual pages for each cleaning service (Industrial, Construction, Office, Window)
+- **About**: Company information and values
+- **Contact**: Dedicated contact page with form and business information
+- **Legal**: Impressum, Privacy Policy, and Terms of Service pages
+
+### UI Components
+- **Navigation**: Responsive navigation with mobile hamburger menu
+- **Hero Section**: Compelling headline with trust badges and call-to-action buttons
+- **Services Grid**: Service cards with icons and descriptions
+- **Contact Form**: Multi-step form with validation and submission handling
+- **Footer**: Company information and links
+- **Floating Elements**: WhatsApp button and scroll-to-top functionality
+
+### Business Logic
+- **Contact Form Processing**: Handles form submissions with validation
+- **SEO Optimization**: Dynamic meta tags and structured data
+- **Mobile Responsiveness**: Mobile-first design approach
+- **Performance**: Optimized images and lazy loading
+
+## Data Flow
+
+### Contact Form Submission
+1. User fills out contact form on frontend
+2. Form data is validated using Zod schemas
+3. Data is sent to `/api/contact` endpoint
+4. Backend validates and stores the contact request
+5. Success/error response is returned to frontend
+6. User receives confirmation toast notification
+
+### Service Information Display
+1. Static service information is rendered from component data
+2. Dynamic routing shows different service pages
+3. SEO metadata is updated per page
+4. Contact forms are pre-filled with service type when accessed from service pages
+
+## External Dependencies
+
+### Frontend Dependencies
+- **React Ecosystem**: React, React DOM, React Hook Form
+- **UI Libraries**: Radix UI primitives, Lucide React icons
+- **Styling**: Tailwind CSS, class-variance-authority for component variants
+- **Utilities**: date-fns for date handling, clsx for className management
+- **Development**: Vite, TypeScript, ESLint
+
+### Backend Dependencies
+- **Express.js**: Web server framework
+- **Database**: Drizzle ORM, @neondatabase/serverless for PostgreSQL
+- **Validation**: Zod for schema validation
+- **Session Management**: express-session with connect-pg-simple
+- **Development**: tsx for TypeScript execution, esbuild for production builds
+
+### Third-party Integrations
+- **Analytics**: Prepared for Google Analytics integration
+- **Communication**: WhatsApp Business integration for direct messaging
+- **Email**: Prepared for email notification system (not yet implemented)
+
+## Deployment Strategy
+
+### Development Environment
+- **Local Development**: Vite dev server with HMR
+- **Database**: Local PostgreSQL or development database
+- **Environment Variables**: DATABASE_URL required for database connection
+
+### Production Build
+- **Frontend**: Vite builds optimized static assets to `dist/public`
+- **Backend**: esbuild compiles TypeScript server code to `dist/index.js`
+- **Database**: Drizzle migrations applied via `npm run db:push`
+- **Static Assets**: Served by Express in production mode
+
+### Environment Configuration
+- **NODE_ENV**: Controls development vs production behavior
+- **DATABASE_URL**: PostgreSQL connection string
+- **PORT**: Server port configuration
+- **REPL_ID**: Replit-specific environment detection
+
+### Scalability Considerations
+- **Database**: PostgreSQL with connection pooling
+- **Storage**: Interface-based storage layer allows easy migration from memory to database
+- **Caching**: React Query provides client-side caching
+- **CDN**: Static assets can be served from CDN in production
+
+The application is designed to be easily deployable on various platforms including Replit, Vercel, or traditional VPS hosting with minimal configuration changes.
