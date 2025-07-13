@@ -389,58 +389,7 @@ export default function Industriereinigung() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[hsl(213,78%,32%)] mb-4">
-              Industriereinigung anfragen
-            </h2>
-            <p className="text-xl text-gray-600">
-              Kontaktieren Sie uns für eine kostenlose Beratung und ein unverbindliches Angebot für Ihre Industriereinigung in Bergheim
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button 
-                  asChild
-                  className="bg-[hsl(187,96%,43%)] hover:bg-[hsl(187,96%,53%)] text-white px-8 py-4 rounded-full text-lg font-semibold"
-                >
-                  <a href="tel:+4922719877397">
-                    Jetzt anrufen
-                  </a>
-                </Button>
-                <Button 
-                  asChild
-                  variant="outline"
-                  className="border-[hsl(213,78%,32%)] text-[hsl(213,78%,32%)] hover:bg-[hsl(213,78%,32%)] hover:text-white px-8 py-4 rounded-full text-lg font-semibold"
-                >
-                  <a href="https://wa.me/4922719877397">
-                    WhatsApp <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
-              </div>
-              
-              <div className="text-center">
-                <p className="text-lg text-gray-600 mb-4">
-                  <strong>Sofortige Beratung:</strong> +49 2271 9877397
-                </p>
-                <p className="text-gray-600">
-                  Montag - Freitag: 7:00 - 18:00 Uhr<br />
-                  Samstag: 8:00 - 14:00 Uhr<br />
-                  Notdienst: 24/7 verfügbar
-                </p>
-              </div>
-            </div>
-            
-            <div>
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactForm />
       
       {/* FAQ Section */}
       <section className="py-20 bg-[hsl(220,13%,97%)]">

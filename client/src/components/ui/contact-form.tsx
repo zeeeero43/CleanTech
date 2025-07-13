@@ -9,7 +9,7 @@ import { Textarea } from "./textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 import { Checkbox } from "./checkbox";
 import { Card, CardContent } from "./card";
-import { Phone, Mail, MapPin, Clock, AlertTriangle, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -285,13 +285,7 @@ export function ContactForm() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center">
-                    <AlertTriangle className="text-[hsl(187,96%,43%)] mr-4 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium">Notfall-Hotline</div>
-                      <div className="text-[hsl(220,9%,43%)]">24/7 verfügbar</div>
-                    </div>
-                  </div>
+
                 </div>
               </CardContent>
             </Card>

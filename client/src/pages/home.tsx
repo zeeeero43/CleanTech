@@ -121,11 +121,7 @@ export default function Home() {
       question: "Sind Sie versichert?",
       answer: "Ja, wir sind vollständig versichert. Unsere Haftpflichtversicherung deckt alle Schäden ab, die während der Reinigungsarbeiten entstehen könnten."
     },
-    {
-      id: "emergency",
-      question: "Bieten Sie Notfallreinigungen an?",
-      answer: "Ja, wir bieten 24/7 Notfallreinigungen an. Kontaktieren Sie uns telefonisch für dringende Reinigungsarbeiten."
-    }
+
   ];
 
   return (

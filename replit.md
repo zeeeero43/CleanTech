@@ -10,6 +10,15 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 2025)
 
+### Contact Form Fixes and Emergency Hotline Removal
+- **Date**: July 13, 2025
+- **Changes**:
+  - Removed all emergency hotline (Notfall-Hotline) references from entire website
+  - Fixed buggy contact forms on service pages by replacing with working ContactForm component
+  - Standardized contact form functionality across all service pages
+  - Updated contact form component to remove AlertTriangle icon and emergency service references
+  - All service pages now use the same reliable contact form implementation
+
 ### Image Replacement and Assets Update
 - **Date**: July 13, 2025
 - **Changes**:

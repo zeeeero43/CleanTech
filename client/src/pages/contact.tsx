@@ -4,7 +4,7 @@ import { FloatingElements } from "@/components/ui/floating-elements";
 import { ContactForm } from "@/components/ui/contact-form";
 import { Card, CardContent } from "@/components/ui/card";
 import { SEO } from "@/lib/seo";
-import { Phone, Mail, MapPin, Clock, AlertTriangle, Car } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Car } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -103,15 +103,7 @@ export default function Contact() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center">
-                    <AlertTriangle className="text-[hsl(187,96%,43%)] mr-4 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium">Notfall-Service</div>
-                      <div className="text-[hsl(220,9%,43%)]">
-                        24/7 Erreichbarkeit für Notfälle
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </CardContent>
             </Card>
