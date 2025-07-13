@@ -27,9 +27,13 @@ export function Navigation() {
   // Handle pending scroll after navigation
   useEffect(() => {
     if (pendingScroll && location === "/") {
-      // Use browser's native hash navigation for more reliable scrolling
-      window.location.hash = pendingScroll;
-      setPendingScroll(null);
+      // Use setTimeout to ensure DOM is ready
+      const timeoutId = setTimeout(() => {
+        scrollToSection(pendingScroll);
+        setPendingScroll(null);
+      }, 300);
+      
+      return () => clearTimeout(timeoutId);
     }
   }, [location, pendingScroll]);
 
@@ -38,7 +42,8 @@ export function Navigation() {
     if (href.includes("#")) {
       const sectionId = href.split("#")[1];
       if (location === "/" || location === "") {
-        scrollToSection(sectionId);
+        // Small delay to ensure DOM is ready
+        setTimeout(() => scrollToSection(sectionId), 100);
       } else {
         setPendingScroll(sectionId);
         navigate("/");
@@ -49,7 +54,8 @@ export function Navigation() {
   const handleQuoteClick = () => {
     setIsOpen(false);
     if (location === "/" || location === "") {
-      scrollToSection("contact");
+      // Small delay to ensure DOM is ready
+      setTimeout(() => scrollToSection("contact"), 100);
     } else {
       setPendingScroll("contact");
       navigate("/");

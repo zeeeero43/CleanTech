@@ -10,6 +10,15 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 2025)
 
+### UI/UX Improvements and Fixes
+- **Date**: July 13, 2025
+- **Changes**:
+  - Updated footer to dynamically display current year instead of hardcoded 2024
+  - Replaced about page image with same professional cleaning image from hero section
+  - Added favicon using company logo (same as navigation header logo)
+  - Improved navigation scrolling reliability with better timing mechanisms
+  - Fixed scroll-to-section functionality for "Dienstleistungen" and "Angebot einholen" links
+
 ### Contact Form Fixes and Emergency Hotline Removal
 - **Date**: July 13, 2025
 - **Changes**:

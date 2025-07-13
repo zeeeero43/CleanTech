@@ -14,6 +14,7 @@ import {
   Leaf,
   CheckCircle
 } from "lucide-react";
+import heroImage from "@assets/mittlere-aufnahme-einer-frau-die-drinnen-putzt-min_1752415170427.jpg";
 
 export default function About() {
   const scrollToContact = () => {
@@ -125,8 +126,8 @@ export default function About() {
             <Card className="glassmorphism border-0 shadow-lg">
               <CardContent className="p-8">
                 <img 
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="SILBERREH company building" 
+                  src={heroImage} 
+                  alt="Professional cleaning service - woman cleaning indoors" 
                   className="w-full h-64 object-cover rounded-xl mb-6"
                 />
                 
