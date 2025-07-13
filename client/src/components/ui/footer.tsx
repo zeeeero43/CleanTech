@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -12,11 +12,6 @@ export function Footer() {
             <p className="text-white/80 mb-4">
               Ihr vertrauensvoller Partner für professionelle Reinigungsdienstleistungen seit über 20 Jahren.
             </p>
-            <div className="flex space-x-4">
-              <Facebook className="text-[hsl(187,96%,43%)] hover:text-white transition-colors cursor-pointer" />
-              <Instagram className="text-[hsl(187,96%,43%)] hover:text-white transition-colors cursor-pointer" />
-              <Linkedin className="text-[hsl(187,96%,43%)] hover:text-white transition-colors cursor-pointer" />
-            </div>
           </div>
           
           {/* Services */}
@@ -92,8 +87,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/legal/agb" className="hover:text-[hsl(187,96%,43%)] transition-colors">
-                  AGB
+                <Link href="/legal/faq" className="hover:text-[hsl(187,96%,43%)] transition-colors">
+                  FAQ
                 </Link>
               </li>
               <li>

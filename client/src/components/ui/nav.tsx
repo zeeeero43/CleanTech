@@ -46,13 +46,23 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => handleNavClick(item.href)}
-                className="text-[hsl(220,13%,22%)] hover:text-[hsl(213,78%,32%)] transition-colors cursor-pointer"
-              >
-                {item.label}
-              </button>
+              item.href.includes("#") ? (
+                <button
+                  key={item.label}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-[hsl(220,13%,22%)] hover:text-[hsl(213,78%,32%)] transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="text-[hsl(220,13%,22%)] hover:text-[hsl(213,78%,32%)] transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
           
@@ -87,13 +97,24 @@ export function Navigation() {
               
               <nav className="space-y-6">
                 {navItems.map((item) => (
-                  <button
-                    key={item.label}
-                    onClick={() => handleNavClick(item.href)}
-                    className="block text-[hsl(220,13%,22%)] hover:text-[hsl(213,78%,32%)] transition-colors text-lg text-left w-full"
-                  >
-                    {item.label}
-                  </button>
+                  item.href.includes("#") ? (
+                    <button
+                      key={item.label}
+                      onClick={() => handleNavClick(item.href)}
+                      className="block text-[hsl(220,13%,22%)] hover:text-[hsl(213,78%,32%)] transition-colors text-lg text-left w-full"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="block text-[hsl(220,13%,22%)] hover:text-[hsl(213,78%,32%)] transition-colors text-lg text-left w-full"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
                 
                 <div className="pt-6 border-t space-y-4">

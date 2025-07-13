@@ -14,8 +14,8 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Modern industrial cleaning facility" 
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
+          alt="Professional building cleaning service" 
           className="w-full h-full object-cover" 
         />
         <div className="hero-gradient absolute inset-0"></div>
@@ -53,18 +53,18 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               onClick={scrollToContact}
-              className="cta-button text-white px-8 py-4 rounded-full font-semibold text-lg"
+              className="cta-button text-white px-10 py-6 rounded-full font-semibold text-xl"
             >
-              <FileText className="w-5 h-5 mr-2" />
+              <FileText className="w-6 h-6 mr-2" />
               Kostenloses Angebot anfordern
             </Button>
             <Button 
               asChild
               variant="outline"
-              className="bg-white text-[hsl(213,78%,32%)] px-8 py-4 rounded-full font-semibold text-lg border-white hover:bg-[hsl(220,13%,97%)]"
+              className="bg-white text-[hsl(213,78%,32%)] px-10 py-6 rounded-full font-semibold text-xl border-white hover:bg-[hsl(220,13%,97%)]"
             >
               <a href="tel:+4922719877397">
-                <Phone className="w-5 h-5 mr-2" />
+                <Phone className="w-6 h-6 mr-2" />
                 Jetzt anrufen
               </a>
             </Button>

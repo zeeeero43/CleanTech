@@ -19,7 +19,13 @@ export class MemStorage implements IStorage {
   async createContactRequest(insertRequest: InsertContactRequest): Promise<ContactRequest> {
     const id = this.currentId++;
     const request: ContactRequest = { 
-      ...insertRequest, 
+      ...insertRequest,
+      size: insertRequest.size || null,
+      frequency: insertRequest.frequency || null,
+      preferredDate: insertRequest.preferredDate || null,
+      company: insertRequest.company || null,
+      message: insertRequest.message || null,
+      privacyConsent: insertRequest.privacyConsent || true,
       id,
       createdAt: new Date(),
       processed: false

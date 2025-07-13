@@ -1,29 +1,29 @@
 import { Card, CardContent } from "./card";
 import { Button } from "./button";
-import { Factory, HardHat, Building, Square, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Services() {
   const services = [
     {
-      icon: Factory,
+      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
       title: "Industriereinigung",
       description: "Maschinenreinigung, Produktionsanlagen, Chemie-/Säurebehandlungen. Hochdruck- und Heißreinigung für optimale Betriebseffizienz.",
       href: "/services/industriereinigung"
     },
     {
-      icon: HardHat,
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
       title: "Bauschlussreinigung",
       description: "Komplette Bauschlussreinigung inklusive Wertstofftrennung und fachgerechter Entsorgung. Übergabebereit in kürzester Zeit.",
       href: "/services/bauschlussreinigung"
     },
     {
-      icon: Building,
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
       title: "Büro- & Gewerbereinigung",
       description: "Regelmäßige Reinigung für Büros, Praxen und Geschäfte. Flexible Zeiten und individuelle Reinigungspläne.",
       href: "/services/bueroreinigung"
     },
     {
-      icon: Square,
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
       title: "Fenster- & Glasreinigung",
       description: "Streifenfreie Ergebnisse durch Osmose-Technik und professionelle Steiger-Ausrüstung. Auch schwer erreichbare Bereiche.",
       href: "/services/fensterreinigung"
@@ -53,8 +53,12 @@ export function Services() {
           {services.map((service) => (
             <Card key={service.title} className="service-card glassmorphism border-0 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-8 text-center">
-                <div className="text-5xl text-[hsl(187,96%,43%)] mb-6 flex justify-center">
-                  <service.icon className="w-16 h-16" />
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-4">
                   {service.title}
