@@ -6,7 +6,7 @@ Diese Anleitung zeigt dir, wie du die SILBERREH GmbH Website auf einem frischen 
 
 ## Systemanforderungen
 
-- Ubuntu 22.04 LTS (empfohlen) oder Ubuntu 20.04 LTS
+- Ubuntu 24.04 LTS (empfohlen) oder Ubuntu 22.04 LTS
 - Mindestens 2GB RAM, 20GB Speicher
 - Root-Zugang oder sudo-Berechtigungen
 - Domain-Name (z.B. silberreh.de)
@@ -22,7 +22,7 @@ sudo apt update && sudo apt upgrade -y
 ### 1.2 Grundlegende Pakete installieren
 
 ```bash
-sudo apt install -y curl wget git unzip software-properties-common build-essential
+sudo apt install -y curl wget git unzip software-properties-common build-essential ca-certificates gnupg lsb-release
 ```
 
 ### 1.3 Firewall konfigurieren
@@ -42,6 +42,12 @@ sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
+
+### 1.5 Zeitzone konfigurieren
+
+```bash
+sudo timedatectl set-timezone Europe/Berlin
 ```
 
 ## 2. Node.js Installation
@@ -68,6 +74,8 @@ npm --version   # sollte eine npm-Version anzeigen
 sudo apt install -y postgresql postgresql-contrib
 ```
 
+**Hinweis für Ubuntu 24.04:** PostgreSQL 16 wird standardmäßig installiert.
+
 ### 3.2 PostgreSQL-Benutzer und Datenbank erstellen
 
 ```bash
@@ -86,7 +94,9 @@ GRANT ALL PRIVILEGES ON DATABASE silberreh_db TO silberreh;
 ### 3.3 PostgreSQL für lokale Verbindungen konfigurieren
 
 ```bash
-sudo nano /etc/postgresql/14/main/pg_hba.conf
+# PostgreSQL Version ermitteln
+PG_VERSION=$(sudo -u postgres psql -t -c "SELECT version();" | grep -oP "\d+\.\d+" | head -1 | cut -d. -f1)
+sudo nano /etc/postgresql/$PG_VERSION/main/pg_hba.conf
 ```
 
 Ändere die Zeile:
@@ -123,7 +133,10 @@ sudo systemctl enable nginx
 ### 5.1 Certbot installieren
 
 ```bash
-sudo apt install -y certbot python3-certbot-nginx
+sudo apt install -y snapd
+sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -sf /snap/bin/certbot /usr/bin/certbot
 ```
 
 ### 5.2 SSL-Zertifikat erstellen
@@ -492,8 +505,10 @@ sudo crontab -e
 
 Füge hinzu:
 ```bash
-0 12 * * * /usr/bin/certbot renew --quiet && /usr/bin/systemctl reload nginx
+0 12 * * * /snap/bin/certbot renew --quiet && /usr/bin/systemctl reload nginx
 ```
+
+**Hinweis für Ubuntu 24.04:** Certbot wird über snap installiert, daher der Pfad `/snap/bin/certbot`.
 
 ### 11.3 Regelmäßige Backups
 
@@ -574,6 +589,13 @@ sudo certbot certificates
 sudo certbot renew --dry-run
 ```
 
+**Ubuntu 24.04 spezifische Probleme:**
+```bash
+# Snap-Dienste überprüfen
+sudo snap services certbot
+sudo snap logs certbot
+```
+
 ### Support-Befehle
 
 ```bash
@@ -597,6 +619,7 @@ pm2 logs --lines 50
 3. SSL-Zertifikate überwachen: `sudo certbot certificates`
 4. Starke Passwörter für Datenbank und Webhook-Secret verwenden
 5. Regelmäßige Backups der Datenbank und Dateien
+6. **Ubuntu 24.04 spezifisch:** Snap-Updates überwachen: `sudo snap refresh`
 
 ## Nächste Schritte
 
@@ -610,4 +633,4 @@ Nach erfolgreichem Deployment:
 
 ---
 
-**Hinweis:** Diese Anleitung ist spezifisch für Ubuntu-basierte VPS-Systeme. Für andere Distributionen können die Befehle variieren.
+**Hinweis:** Diese Anleitung ist optimiert für Ubuntu 24.04 LTS. Für ältere Ubuntu-Versionen oder andere Distributionen können die Befehle variieren.
