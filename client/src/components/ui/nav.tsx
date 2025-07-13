@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "./button";
 import { Sheet, SheetContent, SheetTrigger } from "./sheet";
 import { Menu, Phone, X } from "lucide-react";
+import logoPath from "@assets/svgexport-1 (11)_1752413065010.png";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -38,9 +39,10 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link href="/" className="flex items-center space-x-4">
+          <Link href="/" className="flex items-center space-x-2">
+            <img src={logoPath} alt="SILBERREH Logo" className="w-8 h-8 object-contain" />
             <div className="text-2xl font-bold text-[hsl(213,78%,32%)]">SILBERREH</div>
-            <div className="hidden sm:block text-sm text-[hsl(215,16%,47%)]">GmbH</div>
+            <div className="hidden sm:block text-sm text-[hsl(215,16%,47%)] ml-1">GmbH</div>
           </Link>
           
           {/* Desktop Navigation */}
@@ -92,7 +94,11 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
               <div className="flex justify-between items-center mb-8">
-                <div className="text-xl font-bold text-[hsl(213,78%,32%)]">SILBERREH GmbH</div>
+                <div className="flex items-center space-x-2">
+                  <img src={logoPath} alt="SILBERREH Logo" className="w-6 h-6 object-contain" />
+                  <div className="text-xl font-bold text-[hsl(213,78%,32%)]">SILBERREH</div>
+                  <div className="text-sm text-[hsl(215,16%,47%)] ml-1">GmbH</div>
+                </div>
               </div>
               
               <nav className="space-y-6">
