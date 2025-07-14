@@ -138,7 +138,7 @@ export default function Bauschlussreinigung() {
                     20+ Jahre Erfahrung
                   </h3>
                   <p className="text-gray-600">
-                    Hunderte erfolgreich abgeschlossene Bauschlussreinigungen in Bergheim und Umgebung
+                    Hunderte erfolgreich abgeschlossene Bauschlussreinigungen in Bergheim + 80km Umkreis
                   </p>
                 </CardContent>
               </Card>
@@ -179,7 +179,7 @@ export default function Bauschlussreinigung() {
               Unsere Bauschlussreinigung-Leistungen
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Komplette Endreinigung für alle Bauprojekte in Bergheim und Umgebung
+              Komplette Endreinigung für alle Bauprojekte in Bergheim + 80km Umkreis
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -354,7 +354,7 @@ export default function Bauschlussreinigung() {
               Einsatzbereiche unserer Bauschlussreinigung
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Wir reinigen alle Arten von Bauprojekten in Bergheim und Umgebung
+              Wir reinigen alle Arten von Bauprojekten in Bergheim + 80km Umkreis
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">

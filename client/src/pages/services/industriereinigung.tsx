@@ -179,7 +179,7 @@ export default function Industriereinigung() {
               Unsere Industriereinigung-Leistungen
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Professionelle Reinigung für alle Industriebereiche in Bergheim und Umgebung
+              Professionelle Reinigung für alle Industriebereiche in Bergheim + 80km Umkreis
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -353,7 +353,7 @@ export default function Industriereinigung() {
               Einsatzbereiche unserer Industriereinigung
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Wir reinigen in verschiedenen Industriebereichen in Bergheim und Umgebung
+              Wir reinigen in verschiedenen Industriebereichen in Bergheim + 80km Umkreis
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">

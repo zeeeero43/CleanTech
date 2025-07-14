@@ -179,7 +179,7 @@ export default function Bueroreinigung() {
               Unsere Büroreinigung-Leistungen
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Professionelle Gewerbereinigung für alle Bürobereiche in Bergheim und Umgebung
+              Professionelle Gewerbereinigung für alle Bürobereiche in Bergheim + 80km Umkreis
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -352,7 +352,7 @@ export default function Bueroreinigung() {
               Einsatzbereiche unserer Büroreinigung
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Wir reinigen alle Arten von Gewerbeobjekten in Bergheim und Umgebung
+              Wir reinigen alle Arten von Gewerbeobjekten in Bergheim + 80km Umkreis
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">

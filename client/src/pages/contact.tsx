@@ -97,7 +97,7 @@ export default function Contact() {
                       <div className="font-medium">Bürozeiten</div>
                       <div className="text-[hsl(220,9%,43%)]">
                         Montag - Freitag: 8:00 - 17:00 Uhr<br />
-                        Samstag: Geschlossen<br />
+                        Samstag: 8:00 - 14:00 Uhr<br />
                         Sonntag: Geschlossen
                       </div>
                     </div>
@@ -148,55 +148,44 @@ export default function Contact() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[hsl(213,78%,32%)] mb-6">
-              Unsere Einsatzgebiete
+              Unser Einsatzgebiet
             </h2>
             <p className="text-xl text-[hsl(220,9%,43%)] max-w-3xl mx-auto">
-              Wir sind in der gesamten Region tätig und kommen gerne zu Ihnen
+              Wir sind in einem Umkreis von 80 Kilometern rund um Bergheim für Sie da
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="max-w-2xl mx-auto">
             <Card className="glassmorphism border-0 shadow-lg">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-bold text-[hsl(213,78%,32%)] mb-3">
-                  Bergheim
+              <CardContent className="p-12 text-center">
+                <div className="w-20 h-20 bg-[hsl(187,96%,43%)]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MapPin className="w-10 h-10 text-[hsl(187,96%,43%)]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[hsl(213,78%,32%)] mb-4">
+                  Bergheim + 80km Umkreis
                 </h3>
-                <p className="text-[hsl(220,9%,43%)]">
-                  Unser Hauptstandort und Kerngebiet
+                <p className="text-[hsl(220,9%,43%)] mb-6">
+                  Von unserem Hauptstandort in Bergheim aus sind wir in einem Radius von 80 Kilometern für Sie tätig. 
+                  Das umfasst alle größeren Städte und Gemeinden der Region.
                 </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="glassmorphism border-0 shadow-lg">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-bold text-[hsl(213,78%,32%)] mb-3">
-                  Rhein-Erft-Kreis
-                </h3>
-                <p className="text-[hsl(220,9%,43%)]">
-                  Komplette Abdeckung des Kreisgebiets
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="glassmorphism border-0 shadow-lg">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-bold text-[hsl(213,78%,32%)] mb-3">
-                  Köln & Umland
-                </h3>
-                <p className="text-[hsl(220,9%,43%)]">
-                  Großraum Köln und angrenzende Gebiete
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="glassmorphism border-0 shadow-lg">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-bold text-[hsl(213,78%,32%)] mb-3">
-                  Düsseldorf
-                </h3>
-                <p className="text-[hsl(220,9%,43%)]">
-                  Großraum Düsseldorf nach Vereinbarung
-                </p>
+                <div className="grid md:grid-cols-2 gap-4 text-sm text-[hsl(220,9%,43%)]">
+                  <div className="flex items-center justify-center">
+                    <span className="text-[hsl(187,96%,43%)] mr-2">✓</span>
+                    Köln und Umgebung
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <span className="text-[hsl(187,96%,43%)] mr-2">✓</span>
+                    Düsseldorf und Umgebung
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <span className="text-[hsl(187,96%,43%)] mr-2">✓</span>
+                    Rhein-Erft-Kreis
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <span className="text-[hsl(187,96%,43%)] mr-2">✓</span>
+                    Und viele weitere Orte
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>

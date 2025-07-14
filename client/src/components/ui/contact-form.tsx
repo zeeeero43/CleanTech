@@ -279,7 +279,7 @@ export function ContactForm() {
                       <div className="font-medium">Öffnungszeiten</div>
                       <div className="text-[hsl(220,9%,43%)]">
                         Mo-Fr: 8:00-17:00 Uhr<br />
-                        Sa: Geschlossen<br />
+                        Sa: 8:00-14:00 Uhr<br />
                         So: Geschlossen
                       </div>
                     </div>
@@ -296,26 +296,19 @@ export function ContactForm() {
                   Einsatzgebiet
                 </h3>
                 <p className="text-[hsl(220,9%,43%)] mb-4">
-                  Wir sind hauptsächlich in folgenden Gebieten tätig:
+                  Unser Einsatzgebiet:
                 </p>
-                <ul className="text-[hsl(220,9%,43%)] space-y-2">
-                  <li className="flex items-center">
-                    <span className="text-[hsl(187,96%,43%)] mr-2">✓</span>
-                    Bergheim und Umgebung
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-[hsl(187,96%,43%)] mr-2">✓</span>
-                    Rhein-Erft-Kreis
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-[hsl(187,96%,43%)] mr-2">✓</span>
-                    Köln und Umland
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-[hsl(187,96%,43%)] mr-2">✓</span>
-                    Düsseldorf und Umgebung
-                  </li>
-                </ul>
+                <div className="text-[hsl(220,9%,43%)] bg-[hsl(187,96%,43%)]/10 p-4 rounded-lg">
+                  <div className="flex items-center">
+                    <span className="text-[hsl(187,96%,43%)] mr-2 text-lg">✓</span>
+                    <span className="font-semibold text-[hsl(213,78%,32%)]">
+                      Bergheim + 80km Umkreis
+                    </span>
+                  </div>
+                  <p className="text-sm text-[hsl(220,9%,43%)] mt-2 ml-6">
+                    Wir sind in einem Umkreis von 80 Kilometern rund um Bergheim für Sie da
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>

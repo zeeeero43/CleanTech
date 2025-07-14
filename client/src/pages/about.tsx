@@ -84,7 +84,7 @@ export default function About() {
             </h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
               Seit über 20 Jahren Ihr vertrauensvoller Partner für professionelle 
-              Reinigungsdienstleistungen in Bergheim und Umgebung.
+              Reinigungsdienstleistungen in Bergheim + 80km Umkreis.
             </p>
           </div>
         </div>
