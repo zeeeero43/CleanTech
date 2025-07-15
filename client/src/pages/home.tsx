@@ -127,7 +127,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="SILBERREH GmbH - Professionelle Reinigungslösungen | Bergheim, NRW"
+        title="SILBERREH GmbH - Professionelle Gebäudereiningung | Bergheim, NRW"
         description="Professionelle Reinigungsdienste in Bergheim. Industrie-, Büro-, Bau- und Fensterreinigung. Kostenlose Beratung ☎ +49 2271 9877397"
         keywords="Reinigung Bergheim, Reinigungsfirma NRW, Industriereinigung, Büroreinigung, Bauschlussreinigung, Fensterreinigung"
       />

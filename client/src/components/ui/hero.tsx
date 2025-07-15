@@ -1,6 +1,7 @@
 import { Button } from "./button";
-import { Phone, FileText, Award, Shield, ThumbsUp, ChevronDown } from "lucide-react";
+import { Phone, FileText, Award, Shield, ThumbsUp, ChevronDown, Sparkles } from "lucide-react";
 import heroImage from "@assets/mittlere-aufnahme-einer-frau-die-drinnen-putzt-min_1752415170427.jpg";
+import { motion } from "framer-motion";
 
 export function Hero() {
   const scrollToContact = () => {
@@ -10,67 +11,182 @@ export function Hero() {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const badgeVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 15
+      }
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated Background Particles */}
+      <div className="absolute inset-0 z-0">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-white/20 rounded-full animate-particle-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: i * 0.3, duration: 1 }}
+          />
+        ))}
+      </div>
+      
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <motion.img 
           src={heroImage} 
           alt="Professional cleaning service - woman cleaning indoors" 
           className="w-full h-full object-cover" 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
         />
         <div className="hero-gradient absolute inset-0"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center text-white animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Professionelle Reinigungslösungen<br />
-            <span className="text-[hsl(187,96%,43%)]">für höchste Ansprüche</span>
-          </h1>
+        <motion.div 
+          className="text-center text-white"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1 
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            variants={itemVariants}
+          >
+            <span className="inline-block">
+              Professionelle Gebäudereiningung
+            </span>
+            <br />
+            <motion.span 
+              className="gradient-text inline-block"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 1, type: "spring" }}
+            >
+              für höchste Ansprüche
+            </motion.span>
+            <motion.div
+              className="inline-block ml-2"
+              animate={{ 
+                rotate: [0, 10, -10, 0],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 3,
+                delay: 1.5
+              }}
+            >
+              <Sparkles className="w-8 h-8 text-yellow-400" />
+            </motion.div>
+          </motion.h1>
           
-          <p className="text-xl sm:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
+          <motion.p 
+            className="text-xl sm:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90"
+            variants={itemVariants}
+          >
             Ihr vertrauensvoller Partner für makellose Sauberkeit in Industrie, Gewerbe und Privat. 
             Kostenlose Beratung & Angebote.
-          </p>
+          </motion.p>
           
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <div className="trust-badge px-4 py-2 rounded-full text-sm font-medium flex items-center">
-              <Award className="w-4 h-4 mr-2" />
-              20+ Jahre Erfahrung
-            </div>
-            <div className="trust-badge px-4 py-2 rounded-full text-sm font-medium flex items-center">
-              <Shield className="w-4 h-4 mr-2" />
-              Vollversichert
-            </div>
-            <div className="trust-badge px-4 py-2 rounded-full text-sm font-medium flex items-center">
-              <ThumbsUp className="w-4 h-4 mr-2" />
-              100% Zufriedenheitsgarantie
-            </div>
-          </div>
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4 mb-10"
+            variants={itemVariants}
+          >
+            {[
+              { icon: Award, text: "20+ Jahre Erfahrung" },
+              { icon: Shield, text: "Vollversichert" },
+              { icon: ThumbsUp, text: "100% Zufriedenheitsgarantie" }
+            ].map((badge, index) => (
+              <motion.div
+                key={index}
+                className="trust-badge px-4 py-2 rounded-full text-sm font-medium flex items-center"
+                variants={badgeVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px rgba(6, 182, 212, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <badge.icon className="w-4 h-4 mr-2" />
+                {badge.text}
+              </motion.div>
+            ))}
+          </motion.div>
           
           {/* Dual CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={scrollToContact}
-              className="cta-button text-white px-10 py-6 rounded-full font-semibold text-xl"
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            variants={itemVariants}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <FileText className="w-6 h-6 mr-2" />
-              Kostenloses Angebot anfordern
-            </Button>
-            <Button 
-              asChild
-              variant="outline"
-              className="bg-white text-[hsl(213,78%,32%)] px-10 py-6 rounded-full font-semibold text-xl border-white hover:bg-[hsl(220,13%,97%)]"
+              <Button 
+                onClick={scrollToContact}
+                className="cta-button text-white px-10 py-6 rounded-full font-semibold text-xl"
+              >
+                <FileText className="w-6 h-6 mr-2" />
+                Kostenloses Angebot anfordern
+              </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <a href="tel:+4922719877397">
-                <Phone className="w-6 h-6 mr-2" />
-                Jetzt anrufen
-              </a>
-            </Button>
-          </div>
-        </div>
+              <Button 
+                asChild
+                variant="outline"
+                className="bg-white text-[hsl(213,78%,32%)] px-10 py-6 rounded-full font-semibold text-xl border-white hover:bg-[hsl(220,13%,97%)]"
+              >
+                <a href="tel:+4922719877397">
+                  <Phone className="w-6 h-6 mr-2" />
+                  Jetzt anrufen
+                </a>
+              </Button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
       
       {/* Scroll indicator */}
