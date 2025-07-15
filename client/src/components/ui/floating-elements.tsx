@@ -43,7 +43,7 @@ export function FloatingElements() {
           <div className="absolute inset-0 rounded-full bg-[hsl(213,78%,32%)]/20 animate-pulse" />
           
           {/* Simple sparkle */}
-          <div className="absolute -top-1 -right-1">
+          <div className="absolute -top-1 -right-6">
             <Sparkles className="w-3 h-3 text-yellow-400" />
           </div>
         </div>
