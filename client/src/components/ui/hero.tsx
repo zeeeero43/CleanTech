@@ -107,7 +107,7 @@ export function Hero() {
           
           {/* Trust Badges */}
           <motion.div 
-            className="flex flex-wrap justify-center gap-4 mb-10"
+            className="flex flex-wrap justify-center gap-4 mb-8"
             variants={itemVariants}
           >
             {[
@@ -133,7 +133,7 @@ export function Hero() {
           
           {/* Dual CTAs */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
             variants={itemVariants}
           >
             <Button 
@@ -158,7 +158,7 @@ export function Hero() {
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <ChevronDown className="w-8 h-8" />
       </div>
     </section>
