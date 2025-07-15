@@ -16,20 +16,6 @@ export function Services() {
 
   const services = [
     {
-      image: industriereinigungImage,
-      title: "Industriereinigung",
-      description: "Maschinenreinigung, Produktionsanlagen, Chemie-/Säurebehandlungen. Hochdruck- und Heißreinigung für optimale Betriebseffizienz.",
-      href: "/services/industriereinigung",
-      icon: "🏭"
-    },
-    {
-      image: bauschlussreinigungImage,
-      title: "Bauschlussreinigung",
-      description: "Komplette Bauschlussreinigung inklusive Wertstofftrennung und fachgerechter Entsorgung. Übergabebereit in kürzester Zeit.",
-      href: "/services/bauschlussreinigung",
-      icon: "🏗️"
-    },
-    {
       image: bueroreinigungImage,
       title: "Büro- & Gewerbereinigung",
       description: "Regelmäßige Reinigung für Büros, Praxen und Geschäfte. Flexible Zeiten und individuelle Reinigungspläne.",
@@ -42,6 +28,20 @@ export function Services() {
       description: "Streifenfreie Ergebnisse durch Osmose-Technik und professionelle Steiger-Ausrüstung. Auch schwer erreichbare Bereiche.",
       href: "/services/fensterreinigung",
       icon: "🪟"
+    },
+    {
+      image: industriereinigungImage,
+      title: "Industriereinigung",
+      description: "Maschinenreinigung, Produktionsanlagen, Chemie-/Säurebehandlungen. Hochdruck- und Heißreinigung für optimale Betriebseffizienz.",
+      href: "/services/industriereinigung",
+      icon: "🏭"
+    },
+    {
+      image: bauschlussreinigungImage,
+      title: "Bauschlussreinigung",
+      description: "Komplette Bauschlussreinigung inklusive Wertstofftrennung und fachgerechter Entsorgung. Übergabebereit in kürzester Zeit.",
+      href: "/services/bauschlussreinigung",
+      icon: "🏗️"
     }
   ];
 
@@ -136,24 +136,24 @@ export function Services() {
               animate={isInView ? "visible" : "hidden"}
               className="hover:scale-102 hover:-translate-y-1 transition-transform"
             >
-              <div className="relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
                 
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-xl font-bold mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-transform duration-300 group-hover:translate-y-0">
+                  <h3 className="text-xl font-bold mb-2 transition-all duration-300 group-hover:text-yellow-300">
                     {service.title}
                   </h3>
-                  <p className="text-sm opacity-90 mb-4 leading-relaxed">
+                  <p className="text-sm opacity-90 mb-4 leading-relaxed transition-opacity duration-300 group-hover:opacity-100">
                     {service.description}
                   </p>
                   <Link href={service.href}>
                     <Button 
-                      className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                      className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/40 group-hover:scale-102"
                       size="sm"
                     >
                       Mehr Infos <ChevronRight className="w-4 h-4 ml-1" />
@@ -176,24 +176,24 @@ export function Services() {
                 animate={isInView ? "visible" : "hidden"}
                 className="flex-shrink-0 w-80 snap-start"
               >
-                <div className="relative h-96 rounded-xl overflow-hidden shadow-lg">
+                <div className="relative h-96 rounded-xl overflow-hidden shadow-lg group">
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
                   
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl font-bold mb-2">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-transform duration-300 group-hover:translate-y-0">
+                    <h3 className="text-xl font-bold mb-2 transition-all duration-300 group-hover:text-yellow-300">
                       {service.title}
                     </h3>
-                    <p className="text-sm opacity-90 mb-4 leading-relaxed">
+                    <p className="text-sm opacity-90 mb-4 leading-relaxed transition-opacity duration-300 group-hover:opacity-100">
                       {service.description}
                     </p>
                     <Link href={service.href}>
                       <Button 
-                        className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                        className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/40 group-hover:scale-102"
                         size="sm"
                       >
                         Mehr Infos <ChevronRight className="w-4 h-4 ml-1" />

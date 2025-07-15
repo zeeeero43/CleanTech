@@ -29,6 +29,8 @@ Preferred communication style: Simple, everyday language.
   - Services now show as image cards with overlay text on mobile, scrollable horizontally
   - Desktop also converted to same card format for consistency 
   - Added blue gradient overlay to service cards on both mobile and desktop
+  - Added hover animations: image zoom, text color changes, button scaling
+  - Reordered services: Büro/Gewerbe and Fenster first, Industrie/Bau last
   - Desktop maintains original grid layout backup in services-backup.tsx
 
 ### VPS Deployment Documentation and Code Cleanup
