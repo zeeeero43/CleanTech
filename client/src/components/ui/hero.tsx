@@ -49,22 +49,11 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Particles */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Subtle Background Elements */}
       <div className="absolute inset-0 z-0">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full animate-particle-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.3, duration: 1 }}
-          />
-        ))}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-[hsl(187,96%,43%)]/10 rounded-full blur-3xl"></div>
       </div>
       
       {/* Background Image */}
@@ -103,20 +92,9 @@ export function Hero() {
             >
               für höchste Ansprüche
             </motion.span>
-            <motion.div
-              className="inline-block ml-2"
-              animate={{ 
-                rotate: [0, 10, -10, 0],
-                scale: [1, 1.2, 1]
-              }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 3,
-                delay: 1.5
-              }}
-            >
+            <div className="inline-block ml-2">
               <Sparkles className="w-8 h-8 text-yellow-400" />
-            </motion.div>
+            </div>
           </motion.h1>
           
           <motion.p 
@@ -158,33 +136,23 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
             variants={itemVariants}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Button 
+              onClick={scrollToContact}
+              className="cta-button text-white px-10 py-6 rounded-full font-semibold text-xl hover:scale-102 transition-transform"
             >
-              <Button 
-                onClick={scrollToContact}
-                className="cta-button text-white px-10 py-6 rounded-full font-semibold text-xl"
-              >
-                <FileText className="w-6 h-6 mr-2" />
-                Kostenloses Angebot anfordern
-              </Button>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              <FileText className="w-6 h-6 mr-2" />
+              Kostenloses Angebot anfordern
+            </Button>
+            <Button 
+              asChild
+              variant="outline"
+              className="bg-white text-[hsl(213,78%,32%)] px-10 py-6 rounded-full font-semibold text-xl border-white hover:bg-[hsl(220,13%,97%)] hover:scale-102 transition-transform"
             >
-              <Button 
-                asChild
-                variant="outline"
-                className="bg-white text-[hsl(213,78%,32%)] px-10 py-6 rounded-full font-semibold text-xl border-white hover:bg-[hsl(220,13%,97%)]"
-              >
-                <a href="tel:+4922719877397">
-                  <Phone className="w-6 h-6 mr-2" />
-                  Jetzt anrufen
-                </a>
-              </Button>
-            </motion.div>
+              <a href="tel:+4922719877397">
+                <Phone className="w-6 h-6 mr-2" />
+                Jetzt anrufen
+              </a>
+            </Button>
           </motion.div>
         </motion.div>
       </div>

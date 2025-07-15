@@ -94,15 +94,11 @@ export function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <img src={logoPath} alt="SILBERREH Logo" className="w-16 h-16 object-contain" />
-              <div className="text-2xl font-bold text-[hsl(213,78%,32%)]">SILBERREH</div>
+            <img src={logoPath} alt="SILBERREH Logo" className="w-16 h-16 md:w-16 md:h-16 sm:w-12 sm:h-12 object-contain" />
+            <div className="flex items-center">
+              <div className="text-2xl md:text-2xl sm:text-xl font-bold text-[hsl(213,78%,32%)]">SILBERREH</div>
               <div className="text-sm text-[hsl(215,16%,47%)] ml-1">GmbH</div>
-            </motion.div>
+            </div>
           </Link>
           
           {/* Desktop Navigation */}
@@ -139,7 +135,7 @@ export function Navigation() {
             </a>
             <Button 
               onClick={handleQuoteClick}
-              className="cta-button text-white px-6 py-2 rounded-full font-medium"
+              className="cta-button text-white px-6 py-2 rounded-full font-medium hover:scale-102 transition-transform"
             >
               Angebot einholen
             </Button>
@@ -192,7 +188,7 @@ export function Navigation() {
                   </a>
                   <Button 
                     onClick={handleQuoteClick}
-                    className="cta-button text-white px-6 py-2 rounded-full font-medium w-full"
+                    className="cta-button text-white px-6 py-2 rounded-full font-medium w-full hover:scale-102 transition-transform"
                   >
                     Angebot einholen
                   </Button>

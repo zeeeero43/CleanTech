@@ -10,6 +10,17 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 2025)
 
+### Animation Improvements and UX Fixes
+- **Date**: July 15, 2025
+- **Changes**:
+  - Removed excessive animations per user feedback (moving elements were too distracting)
+  - Fixed header layout - GmbH now properly positioned next to SILBERREH on desktop and mobile
+  - Improved hero section centering with proper padding (pt-20)
+  - Made service animations more subtle and professional
+  - Reduced button hover effects from scale-105 to scale-102 for better UX
+  - Fixed Framer Motion warnings by removing unnecessary whileHover/whileTap props
+  - Replaced flashy animations with subtle transitions and hover effects
+
 ### VPS Deployment Documentation and Code Cleanup
 - **Date**: July 13, 2025
 - **Changes**:

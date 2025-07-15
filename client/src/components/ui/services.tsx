@@ -80,28 +80,10 @@ export function Services() {
 
   return (
     <section id="services" className="py-20 bg-[hsl(220,13%,97%)] relative overflow-hidden">
-      {/* Animated Background Elements */}
+      {/* Subtle Background */}
       <div className="absolute inset-0 z-0">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-32 h-32 bg-[hsl(187,96%,43%)]/5 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.6, 0.3],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              delay: i * 1.5,
-            }}
-          />
-        ))}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-[hsl(187,96%,43%)]/5 rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-[hsl(213,78%,32%)]/5 rounded-full blur-xl"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
@@ -154,86 +136,41 @@ export function Services() {
             <motion.div
               key={service.title}
               variants={cardVariants}
-              whileHover={{ 
-                scale: 1.05,
-                rotateY: 5,
-                z: 50
-              }}
-              style={{ transformStyle: "preserve-3d" }}
+              className="hover:scale-102 hover:-translate-y-1 transition-transform"
             >
-              <Card className="service-card glassmorphism border-0 shadow-lg hover:shadow-xl transition-all duration-300 card-3d relative overflow-hidden">
-                {/* Animated Corner Sparkle */}
-                <motion.div
-                  className="absolute top-2 right-2 z-10"
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    rotate: [0, 360]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: index * 0.5
-                  }}
-                >
-                  <Sparkles className="w-4 h-4 text-[hsl(187,96%,43%)]" />
-                </motion.div>
+              <Card className="service-card glassmorphism border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                {/* Subtle corner accent */}
+                <div className="absolute top-2 right-2 z-10">
+                  <Sparkles className="w-4 h-4 text-[hsl(187,96%,43%)] opacity-60" />
+                </div>
 
                 <CardContent className="p-8 text-center">
-                  <motion.div 
-                    className="mb-6 flex justify-center relative"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  >
-                    <div className="relative">
+                  <div className="mb-6 flex justify-center relative">
+                    <div className="relative group">
                       <img 
                         src={service.image} 
                         alt={service.title}
-                        className="w-full h-48 object-cover rounded-lg"
+                        className="w-full h-48 object-cover rounded-lg transition-transform duration-300 group-hover:scale-102"
                       />
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/20 to-transparent rounded-lg"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                      <motion.div
-                        className="absolute bottom-2 right-2 text-2xl"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.5 + index * 0.1, type: "spring" }}
-                      >
+                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-2 right-2 text-2xl">
                         {service.icon}
-                      </motion.div>
+                      </div>
                     </div>
-                  </motion.div>
-                  <motion.h3 
-                    className="text-xl font-bold text-[hsl(213,78%,32%)] mb-4"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                  >
+                  </div>
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-4">
                     {service.title}
-                  </motion.h3>
-                  <motion.p 
-                    className="text-[hsl(220,9%,43%)] mb-6 leading-relaxed"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 + index * 0.1 }}
-                  >
+                  </h3>
+                  <p className="text-[hsl(220,9%,43%)] mb-6 leading-relaxed">
                     {service.description}
-                  </motion.p>
+                  </p>
                   <Link href={service.href}>
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                    <Button 
+                      variant="link" 
+                      className="text-[hsl(187,96%,43%)] hover:text-[hsl(213,78%,32%)] font-medium p-0 hover:scale-102 transition-transform"
                     >
-                      <Button 
-                        variant="link" 
-                        className="text-[hsl(187,96%,43%)] hover:text-[hsl(213,78%,32%)] font-medium p-0"
-                      >
-                        Mehr erfahren <ArrowRight className="w-4 h-4 ml-1" />
-                      </Button>
-                    </motion.div>
+                      Mehr erfahren <ArrowRight className="w-4 h-4 ml-1" />
+                    </Button>
                   </Link>
                 </CardContent>
               </Card>
