@@ -25,6 +25,9 @@ Preferred communication style: Simple, everyday language.
   - Reduced padding on all page hero sections to py-6 to make blue boxes shorter
   - Removed sparkle icon from phone button for cleaner appearance
   - Fixed padding on all pages: about, contact, services, and legal pages
+  - Implemented horizontal scrolling cards for services on mobile (customer preference)
+  - Services now show as image cards with overlay text on mobile, scrollable horizontally
+  - Desktop maintains original grid layout, backup saved in services-backup.tsx
 
 ### VPS Deployment Documentation and Code Cleanup
 - **Date**: July 13, 2025

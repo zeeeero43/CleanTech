@@ -1,6 +1,6 @@
 import { Card, CardContent } from "./card";
 import { Button } from "./button";
-import { ArrowRight, Star, ChevronRight } from "lucide-react";
+import { ArrowRight, Sparkles, Star } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -10,7 +10,8 @@ import bauschlussreinigungImage from "@assets/mannlicher-arbeiter-der-auf-der-ba
 import bueroreinigungImage from "@assets/mittlere-aufnahme-von-menschen-die-gebaude-reinigen-min_1752416458056.jpg";
 import fensterreinigungImage from "@assets/mittlere-aufnahme-von-menschen-die-gebaude-reinigen (1)-min (1)_1752416463220.jpg";
 
-export function Services() {
+// BACKUP OF OLD SERVICES COMPONENT - ORIGINAL GRID LAYOUT
+export function ServicesBackup() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -126,17 +127,24 @@ export function Services() {
           </motion.p>
         </motion.div>
         
-        {/* Desktop Grid Layout */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               variants={cardVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
               className="hover:scale-102 hover:-translate-y-1 transition-transform"
             >
               <Card className="service-card glassmorphism border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                {/* Subtle corner accent */}
+                <div className="absolute top-2 right-2 z-10">
+                  <Sparkles className="w-4 h-4 text-[hsl(187,96%,43%)] opacity-60" />
+                </div>
+
                 <CardContent className="p-8 text-center">
                   <div className="mb-6 flex justify-center relative">
                     <div className="relative group">
@@ -169,48 +177,7 @@ export function Services() {
               </Card>
             </motion.div>
           ))}
-        </div>
-
-        {/* Mobile Horizontal Scroll Layout */}
-        <div className="md:hidden">
-          <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                variants={cardVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                className="flex-shrink-0 w-80 snap-start"
-              >
-                <div className="relative h-96 rounded-xl overflow-hidden shadow-lg">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl font-bold mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm opacity-90 mb-4 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <Link href={service.href}>
-                      <Button 
-                        className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
-                        size="sm"
-                      >
-                        Mehr Infos <ChevronRight className="w-4 h-4 ml-1" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
