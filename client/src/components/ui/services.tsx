@@ -136,37 +136,31 @@ export function Services() {
               animate={isInView ? "visible" : "hidden"}
               className="hover:scale-102 hover:-translate-y-1 transition-transform"
             >
-              <Card className="service-card glassmorphism border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                <CardContent className="p-8 text-center">
-                  <div className="mb-6 flex justify-center relative">
-                    <div className="relative group">
-                      <img 
-                        src={service.image} 
-                        alt={service.title}
-                        className="w-full h-48 object-cover rounded-lg transition-transform duration-300 group-hover:scale-102"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-2 right-2 text-2xl">
-                        {service.icon}
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-4">
+              <div className="relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent" />
+                
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-xl font-bold mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-[hsl(220,9%,43%)] mb-6 leading-relaxed">
+                  <p className="text-sm opacity-90 mb-4 leading-relaxed">
                     {service.description}
                   </p>
                   <Link href={service.href}>
                     <Button 
-                      variant="link" 
-                      className="text-[hsl(187,96%,43%)] hover:text-[hsl(213,78%,32%)] font-medium p-0 hover:scale-102 transition-transform"
+                      className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                      size="sm"
                     >
-                      Mehr erfahren <ArrowRight className="w-4 h-4 ml-1" />
+                      Mehr Infos <ChevronRight className="w-4 h-4 ml-1" />
                     </Button>
                   </Link>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -188,7 +182,7 @@ export function Services() {
                     alt={service.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent" />
                   
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="text-xl font-bold mb-2">

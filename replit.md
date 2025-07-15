@@ -27,7 +27,9 @@ Preferred communication style: Simple, everyday language.
   - Fixed padding on all pages: about, contact, services, and legal pages
   - Implemented horizontal scrolling cards for services on mobile (customer preference)
   - Services now show as image cards with overlay text on mobile, scrollable horizontally
-  - Desktop maintains original grid layout, backup saved in services-backup.tsx
+  - Desktop also converted to same card format for consistency 
+  - Added blue gradient overlay to service cards on both mobile and desktop
+  - Desktop maintains original grid layout backup in services-backup.tsx
 
 ### VPS Deployment Documentation and Code Cleanup
 - **Date**: July 13, 2025
