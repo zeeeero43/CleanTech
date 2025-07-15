@@ -22,6 +22,7 @@ Preferred communication style: Simple, everyday language.
   - Replaced flashy animations with subtle transitions and hover effects
   - Fixed gradient text color in hero section (changed from blue to yellow/orange for better visibility)
   - Replaced WhatsApp button with phone button using landline number (tel:+4922719877397)
+  - Reduced padding on service page hero sections from py-16 to py-12 to make blue boxes shorter
 
 ### VPS Deployment Documentation and Code Cleanup
 - **Date**: July 13, 2025
