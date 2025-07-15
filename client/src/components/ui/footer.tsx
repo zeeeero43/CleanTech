@@ -88,9 +88,9 @@ export function Footer() {
               </li>
 
               <li>
-                <button className="hover:text-[hsl(187,96%,43%)] transition-colors text-left">
+                <Link href="/sitemap" className="hover:text-[hsl(187,96%,43%)] transition-colors">
                   Sitemap
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

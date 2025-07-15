@@ -127,9 +127,60 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="SILBERREH GmbH - Professionelle Gebäudereiningung | Bergheim, NRW"
-        description="Professionelle Reinigungsdienste in Bergheim. Industrie-, Büro-, Bau- und Fensterreinigung. Kostenlose Beratung ☎ +49 2271 9877397"
-        keywords="Reinigung Bergheim, Reinigungsfirma NRW, Industriereinigung, Büroreinigung, Bauschlussreinigung, Fensterreinigung"
+        title="SILBERREH GmbH - Professionelle Reinigungsdienstleistungen in Bergheim & Köln | 20+ Jahre Erfahrung"
+        description="✓ Professionelle Gebäudereinigung in Bergheim seit über 20 Jahren ✓ Industriereinigung ✓ Büroreinigung ✓ Bauschlussreinigung ✓ Fensterreinigung ✓ Kostenlose Beratung & Angebote ✓ Vollversichert ✓ 100% Zufriedenheitsgarantie"
+        keywords="Gebäudereinigung Bergheim, Industriereinigung Köln, Büroreinigung Düsseldorf, Bauschlussreinigung NRW, Fensterreinigung Rhein-Erft-Kreis, Reinigungsservice Bergheim, Reinigungsfirma Köln, Gewerbereinigung, Unterhaltsreinigung, Grundreinigung, professionelle Reinigung"
+        canonical="https://silberreh.de"
+        ogType="website"
+        ogImage="https://silberreh.de/images/silberreh-cleaning-service.jpg"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "SILBERREH GmbH",
+          "description": "Professionelle Reinigungsdienstleistungen in Bergheim und Umgebung seit über 20 Jahren",
+          "url": "https://silberreh.de",
+          "logo": "https://silberreh.de/images/silberreh-logo.png",
+          "telephone": "+49 2271 9877397",
+          "email": "info@silberreh.de",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kentener Wiesen 39a",
+            "addressLocality": "Bergheim",
+            "postalCode": "50126",
+            "addressCountry": "DE",
+            "addressRegion": "NRW"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.9549",
+            "longitude": "6.6447"
+          },
+          "openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00",
+          "priceRange": "€€",
+          "areaServed": [
+            { "@type": "City", "name": "Bergheim" },
+            { "@type": "City", "name": "Köln" },
+            { "@type": "City", "name": "Düsseldorf" },
+            { "@type": "AdministrativeArea", "name": "Rhein-Erft-Kreis" },
+            { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" }
+          ],
+          "serviceType": [
+            "Industriereinigung",
+            "Büroreinigung", 
+            "Gewerbereinigung",
+            "Bauschlussreinigung",
+            "Fensterreinigung",
+            "Glasreinigung",
+            "Grundreinigung",
+            "Unterhaltsreinigung"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "127",
+            "bestRating": "5"
+          }
+        }}
       />
       
       <Navigation />

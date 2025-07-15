@@ -8,9 +8,28 @@ export default function Datenschutz() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Datenschutzerklärung - SILBERREH GmbH | DSGVO-konform | Bergheim"
-        description="Datenschutzerklärung der SILBERREH GmbH - DSGVO-konforme Informationen zum Datenschutz und zur Datenverarbeitung."
-        keywords="Datenschutz SILBERREH, DSGVO, Datenschutzerklärung, Datenverarbeitung"
+        title="Datenschutzerklärung - SILBERREH GmbH | Datenschutz | DSGVO konform | Bergheim"
+        description="⭐ Datenschutzerklärung der SILBERREH GmbH - Informationen zum Datenschutz und zur Verarbeitung Ihrer personenbezogenen Daten ⭐ DSGVO konform ⭐ Transparente Datenverarbeitung ⭐ Ihre Rechte als Betroffener"
+        keywords="Datenschutz SILBERREH, Datenschutzerklärung, DSGVO, Bergheim, Datenschutzbestimmungen, Datenverarbeitung, Betroffenenrechte, Datensicherheit, Cookies, Kontaktformular"
+        canonical="https://silberreh.de/legal/datenschutz"
+        ogType="website"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Datenschutzerklärung SILBERREH GmbH",
+          "description": "Datenschutzerklärung und Informationen zur Datenverarbeitung",
+          "about": {
+            "@type": "LocalBusiness",
+            "name": "SILBERREH GmbH",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kentener Wiesen 39A",
+              "addressLocality": "Bergheim",
+              "postalCode": "50126",
+              "addressCountry": "DE"
+            }
+          }
+        }}
       />
       
       <Navigation />

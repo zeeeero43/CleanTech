@@ -76,9 +76,47 @@ export default function Bauschlussreinigung() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Bauschlussreinigung Bergheim | Professionelle Endreinigung - SILBERREH"
-        description="Professionelle Bauschlussreinigung in Bergheim. Komplette Endreinigung, Wertstofftrennung, übergabebereit. Erfahrung seit 20+ Jahren. ☎ +49 2271 9877397"
-        keywords="Bauschlussreinigung Bergheim, Endreinigung NRW, Bauendreinigung, Rohbaureinigung, Wertstofftrennung"
+        title="Bauschlussreinigung Bergheim - Professionelle Endreinigung | SILBERREH GmbH | #1 Bauendreinigung"
+        description="⭐ Professionelle Bauschlussreinigung in Bergheim, Köln & Düsseldorf ⭐ Komplette Endreinigung ⭐ Wertstofftrennung ⭐ Übergabebereit ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
+        keywords="Bauschlussreinigung Bergheim, Endreinigung Köln, Bauendreinigung Düsseldorf, Rohbaureinigung NRW, Wertstofftrennung, Bauschlussreinigung Preise, Bauschlussreinigung Angebot, Bauschlussreinigung Kosten, Bauschlussreinigung übergabebereit"
+        canonical="https://silberreh.de/services/bauschlussreinigung"
+        ogType="service"
+        ogImage="https://silberreh.de/images/bauschlussreinigung-service.jpg"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Bauschlussreinigung Bergheim",
+          "description": "Professionelle Bauschlussreinigung und Endreinigung in Bergheim, Köln und Düsseldorf",
+          "serviceType": "Bauschlussreinigung",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "SILBERREH GmbH",
+            "telephone": "+49 2271 9877397",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kentener Wiesen 39a",
+              "addressLocality": "Bergheim",
+              "postalCode": "50126",
+              "addressCountry": "DE"
+            }
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Bergheim" },
+            { "@type": "City", "name": "Köln" },
+            { "@type": "City", "name": "Düsseldorf" }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "ab 35.00",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "35.00",
+              "priceCurrency": "EUR",
+              "unitText": "pro Quadratmeter"
+            }
+          }
+        }}
       />
       
       <Navigation />

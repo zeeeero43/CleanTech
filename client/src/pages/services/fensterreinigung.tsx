@@ -76,9 +76,47 @@ export default function Fensterreinigung() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Fensterreinigung Bergheim | Professionelle Scheibenreinigung - SILBERREH"
-        description="Professionelle Fensterreinigung in Bergheim. Scheibenreinigung für Büros, Wohnhäuser, Schaufenster. Streifenfreie Ergebnisse. ☎ +49 2271 9877397"
-        keywords="Fensterreinigung Bergheim, Scheibenreinigung NRW, Glasreinigung, Schaufensterreinigung, Bürofenster"
+        title="Fensterreinigung Bergheim - Professionelle Glasreinigung | SILBERREH GmbH | #1 Scheibenreinigung"
+        description="⭐ Professionelle Fensterreinigung in Bergheim, Köln & Düsseldorf ⭐ Streifenfreie Ergebnisse ⭐ Osmose-Technik ⭐ Hochwertige Ausrüstung ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
+        keywords="Fensterreinigung Bergheim, Scheibenreinigung Köln, Glasreinigung Düsseldorf, Schaufensterreinigung NRW, Bürofenster reinigen, Fensterreinigung Preise, Fensterreinigung Angebot, Fensterreinigung Kosten, Fensterreinigung Osmose, Fensterreinigung professionell"
+        canonical="https://silberreh.de/services/fensterreinigung"
+        ogType="service"
+        ogImage="https://silberreh.de/images/fensterreinigung-service.jpg"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Fensterreinigung Bergheim",
+          "description": "Professionelle Fenster- und Glasreinigung in Bergheim, Köln und Düsseldorf",
+          "serviceType": "Fensterreinigung",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "SILBERREH GmbH",
+            "telephone": "+49 2271 9877397",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kentener Wiesen 39a",
+              "addressLocality": "Bergheim",
+              "postalCode": "50126",
+              "addressCountry": "DE"
+            }
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Bergheim" },
+            { "@type": "City", "name": "Köln" },
+            { "@type": "City", "name": "Düsseldorf" }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "ab 2.50",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "2.50",
+              "priceCurrency": "EUR",
+              "unitText": "pro Quadratmeter"
+            }
+          }
+        }}
       />
       
       <Navigation />

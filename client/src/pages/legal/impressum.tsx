@@ -8,9 +8,30 @@ export default function Impressum() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Impressum - SILBERREH GmbH | Rechtliche Angaben | Bergheim"
-        description="Impressum der SILBERREH GmbH - Alle rechtlichen Angaben gemäß § 5 TMG. Kentener Wiesen 39a, 50126 Bergheim."
-        keywords="Impressum SILBERREH, Rechtliche Angaben, Bergheim, Reinigungsfirma"
+        title="Impressum - SILBERREH GmbH | Rechtliche Angaben | Bergheim | HRB 114670"
+        description="⭐ Impressum der SILBERREH GmbH - Alle rechtlichen Angaben gemäß § 5 TMG ⭐ Kentener Wiesen 39A, 50126 Bergheim ⭐ HRB 114670 Amtsgericht Köln ⭐ Geschäftsführer: Tarek Yusef ⭐ Professionelle Reinigungsdienstleistungen"
+        keywords="Impressum SILBERREH, Rechtliche Angaben, Bergheim, Reinigungsfirma, HRB 114670, Amtsgericht Köln, Tarek Yusef, Gebäudereinigung, Handelsregister"
+        canonical="https://silberreh.de/legal/impressum"
+        ogType="website"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Impressum SILBERREH GmbH",
+          "description": "Rechtliche Angaben der SILBERREH GmbH gemäß § 5 TMG",
+          "about": {
+            "@type": "LocalBusiness",
+            "name": "SILBERREH GmbH",
+            "legalName": "SILBERREH GmbH",
+            "foundingDate": "2023",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kentener Wiesen 39A",
+              "addressLocality": "Bergheim",
+              "postalCode": "50126",
+              "addressCountry": "DE"
+            }
+          }
+        }}
       />
       
       <Navigation />
@@ -43,8 +64,9 @@ export default function Impressum() {
                   <div className="mb-8">
                     <p className="text-[hsl(220,9%,43%)]">
                       <strong>SILBERREH GmbH</strong><br />
-                      Kentener Wiesen 39a<br />
-                      50126 Bergheim
+                      Kentener Wiesen 39A<br />
+                      50126 Bergheim<br />
+                      Deutschland
                     </p>
                   </div>
                   
@@ -52,7 +74,8 @@ export default function Impressum() {
                     Vertreten durch:
                   </h3>
                   <p className="text-[hsl(220,9%,43%)] mb-8">
-                    Geschäftsführer: [Name des Geschäftsführers]
+                    Geschäftsführer: Tarek Yusef<br />
+                    Einzelvertretungsberechtigt mit der Befugnis im Namen der Gesellschaft mit sich im eigenen Namen oder als Vertreter eines Dritten Rechtsgeschäfte abzuschließen
                   </p>
                   
                   <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
@@ -69,22 +92,30 @@ export default function Impressum() {
                   <p className="text-[hsl(220,9%,43%)] mb-8">
                     Eintragung im Handelsregister<br />
                     Registergericht: Amtsgericht Köln<br />
-                    Registernummer: HRB [Registernummer]
+                    Registernummer: HRB 114670<br />
+                    Stammkapital: 25.000,00 EUR
+                  </p>
+                  
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    Unternehmensgegenstand:
+                  </h3>
+                  <p className="text-[hsl(220,9%,43%)] mb-8">
+                    Gebäudereinigung, Hausmeister Service, On-Site Management, Arbeitnehmerüberlassung sowie die Montage von Möbeln, Hausrat und sonstigen beweglichen Gegenständen.
                   </p>
                   
                   <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
                     Umsatzsteuer-ID:
                   </h3>
                   <p className="text-[hsl(220,9%,43%)] mb-8">
-                    Umsatzsteuer-Identifikationsnummer nach §27a UStG: DE[Umsatzsteuer-ID]
+                    Umsatzsteuer-Identifikationsnummer nach §27a UStG: wird nachgereicht
                   </p>
                   
                   <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
                     Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
                   </h3>
                   <p className="text-[hsl(220,9%,43%)] mb-8">
-                    [Name des Verantwortlichen]<br />
-                    Kentener Wiesen 39a<br />
+                    Tarek Yusef<br />
+                    Kentener Wiesen 39A<br />
                     50126 Bergheim
                   </p>
                   

@@ -76,9 +76,47 @@ export default function Industriereinigung() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Industriereinigung Bergheim | Professionelle Maschinenreinigung - SILBERREH"
-        description="Professionelle Industriereinigung in Bergheim. Maschinenreinigung, Hochdruckreinigung, Anlagenpflege. Erfahrung seit 20+ Jahren. ☎ +49 2271 9877397"
-        keywords="Industriereinigung Bergheim, Maschinenreinigung NRW, Hochdruckreinigung, Anlagenpflege, Produktionsanlagen reinigen"
+        title="Industriereinigung Bergheim - Professionelle Maschinenreinigung | SILBERREH GmbH | #1 Industrieservice"
+        description="⭐ Professionelle Industriereinigung in Bergheim, Köln & Düsseldorf ⭐ Maschinenreinigung ⭐ Hochdruckreinigung ⭐ Anlagenpflege ⭐ 24/7 Notdienst ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
+        keywords="Industriereinigung Bergheim, Maschinenreinigung Köln, Hochdruckreinigung Düsseldorf, Anlagenpflege NRW, Produktionsanlagen reinigen, Industriereinigung Preise, Industriereinigung Angebot, Industriereinigung Kosten, Industriereinigung Notdienst, Industriereinigung professionell"
+        canonical="https://silberreh.de/services/industriereinigung"
+        ogType="service"
+        ogImage="https://silberreh.de/images/industriereinigung-service.jpg"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Industriereinigung Bergheim",
+          "description": "Professionelle Industriereinigung und Maschinenreinigung in Bergheim, Köln und Düsseldorf",
+          "serviceType": "Industriereinigung",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "SILBERREH GmbH",
+            "telephone": "+49 2271 9877397",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kentener Wiesen 39a",
+              "addressLocality": "Bergheim",
+              "postalCode": "50126",
+              "addressCountry": "DE"
+            }
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Bergheim" },
+            { "@type": "City", "name": "Köln" },
+            { "@type": "City", "name": "Düsseldorf" }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "ab 25.00",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "25.00",
+              "priceCurrency": "EUR",
+              "unitText": "pro Stunde"
+            }
+          }
+        }}
       />
       
       <Navigation />

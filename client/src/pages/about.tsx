@@ -68,9 +68,32 @@ export default function About() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Über uns - SILBERREH GmbH | 20+ Jahre Reinigungserfahrung | Bergheim"
-        description="Lernen Sie SILBERREH GmbH kennen: Über 20 Jahre Erfahrung in der professionellen Reinigung. Unser Team, unsere Werte und unsere Ausstattung."
-        keywords="SILBERREH GmbH, Reinigungsfirma Bergheim, Erfahrung, Team, Qualität, Zertifizierungen"
+        title="Über SILBERREH GmbH - Reinigungsdienstleister aus Bergheim | 20+ Jahre Erfahrung"
+        description="⭐ Über 20 Jahre Erfahrung in der professionellen Reinigung ⭐ Zertifiziert ⭐ Versichert ⭐ Umweltbewusst ⭐ Über 500 zufriedene Kunden ⭐ Ihr vertrauensvoller Partner für Reinigungsdienstleistungen ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
+        keywords="SILBERREH GmbH, Reinigungsunternehmen Bergheim, Reinigungsfirma Geschichte, Zertifizierung, Versicherung, Reinigungsdienstleister NRW, Reinigungsservice Bergheim, Reinigungsunternehmen Köln, professionelle Reinigung, Reinigungsfirma Düsseldorf"
+        canonical="https://silberreh.de/about"
+        ogType="website"
+        ogImage="https://silberreh.de/images/silberreh-team.jpg"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "Über SILBERREH GmbH",
+          "description": "Über 20 Jahre Erfahrung in der professionellen Reinigung",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "SILBERREH GmbH",
+            "foundingDate": "2003",
+            "numberOfEmployees": "10-50",
+            "description": "Professionelle Reinigungsdienstleistungen in Bergheim und Umgebung",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kentener Wiesen 39a",
+              "addressLocality": "Bergheim",
+              "postalCode": "50126",
+              "addressCountry": "DE"
+            }
+          }
+        }}
       />
       
       <Navigation />

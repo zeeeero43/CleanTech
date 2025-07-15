@@ -10,9 +10,31 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Kontakt - SILBERREH GmbH | Kostenlose Beratung | Bergheim"
-        description="Kontaktieren Sie SILBERREH GmbH für professionelle Reinigungsdienstleistungen. Kostenlose Beratung und Angebote. ☎ +49 2271 9877397"
-        keywords="Kontakt SILBERREH, Reinigung Bergheim, Kostenlose Beratung, Angebot anfordern"
+        title="Kontakt - SILBERREH GmbH | Kostenlose Beratung & Angebote | Jetzt anrufen!"
+        description="⭐ Kontaktieren Sie SILBERREH GmbH für professionelle Reinigungsdienstleistungen ⭐ Kostenlose Beratung ⭐ Unverbindliche Angebote ⭐ Schnelle Rückmeldung ⭐ Über 20 Jahre Erfahrung ⭐ Telefon: +49 2271 9877397"
+        keywords="Kontakt SILBERREH, Reinigung Angebot, Kostenlose Beratung, Bergheim Reinigungsservice, Reinigungsunternehmen kontaktieren, Angebot anfordern, Reinigungsfirma Bergheim, Reinigungsservice Köln, Reinigungsdienstleister NRW"
+        canonical="https://silberreh.de/contact"
+        ogType="website"
+        ogImage="https://silberreh.de/images/silberreh-contact.jpg"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Kontakt SILBERREH GmbH",
+          "description": "Kontaktieren Sie uns für professionelle Reinigungsdienstleistungen",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "SILBERREH GmbH",
+            "telephone": "+49 2271 9877397",
+            "email": "info@silberreh.de",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kentener Wiesen 39a",
+              "addressLocality": "Bergheim",
+              "postalCode": "50126",
+              "addressCountry": "DE"
+            }
+          }
+        }}
       />
       
       <Navigation />
