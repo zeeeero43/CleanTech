@@ -20,6 +20,8 @@ Preferred communication style: Simple, everyday language.
   - Reduced button hover effects from scale-105 to scale-102 for better UX
   - Fixed Framer Motion warnings by removing unnecessary whileHover/whileTap props
   - Replaced flashy animations with subtle transitions and hover effects
+  - Fixed gradient text color in hero section (changed from blue to yellow/orange for better visibility)
+  - Replaced WhatsApp button with phone button using landline number (tel:+4922719877397)
 
 ### VPS Deployment Documentation and Code Cleanup
 - **Date**: July 13, 2025

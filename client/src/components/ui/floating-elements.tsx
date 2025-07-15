@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "./button";
-import { ArrowUp, MessageCircle, Phone, Sparkles } from "lucide-react";
+import { ArrowUp, Phone, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function FloatingElements() {
@@ -28,21 +28,19 @@ export function FloatingElements() {
 
   return (
     <>
-      {/* WhatsApp Button */}
+      {/* Phone Button */}
       <motion.a
-        href="https://wa.me/4922719877397"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="floating-whatsapp bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-colors hover:scale-105"
+        href="tel:+4922719877397"
+        className="floating-whatsapp bg-[hsl(213,78%,32%)] hover:bg-[hsl(213,78%,28%)] text-white p-4 rounded-full shadow-lg transition-colors hover:scale-105"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 2, type: "spring", stiffness: 200, damping: 15 }}
       >
         <div className="relative">
-          <MessageCircle className="w-6 h-6" />
+          <Phone className="w-6 h-6" />
           
           {/* Subtle pulse */}
-          <div className="absolute inset-0 rounded-full bg-green-500/20 animate-pulse" />
+          <div className="absolute inset-0 rounded-full bg-[hsl(213,78%,32%)]/20 animate-pulse" />
           
           {/* Simple sparkle */}
           <div className="absolute -top-1 -right-1">
