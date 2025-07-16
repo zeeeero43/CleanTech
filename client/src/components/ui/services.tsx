@@ -1,10 +1,10 @@
 import { Card, CardContent } from "./card";
 import { Button } from "./button";
-import { ArrowRight, Star, ChevronRight } from "lucide-react";
+import { ArrowRight, Star, ChevronRight, ChevronLeft } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import industriereinigungImage from "@assets/professioneller-industriereiniger-im-einheitlichen-schutzboden-der-lebensmittelverarbeitungsanlage-min_1752416442442.jpg";
 import bauschlussreinigungImage from "@assets/mannlicher-arbeiter-der-auf-der-baustelle-eine-betonestrichmaschine-verwendet-min_1752416454977.jpg";
 import bueroreinigungImage from "@assets/mittlere-aufnahme-von-menschen-die-gebaude-reinigen-min_1752416458056.jpg";
@@ -14,6 +14,7 @@ import fensterreinigungImage from "@assets/mittlere-aufnahme-von-menschen-die-ge
 export function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const services = [
     {
@@ -58,6 +59,23 @@ export function Services() {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  const getVisibleServices = () => {
+    const visibleServices = [];
+    for (let i = 0; i < 4; i++) {
+      const index = (currentIndex + i) % services.length;
+      visibleServices.push(services[index]);
+    }
+    return visibleServices;
   };
 
   const containerVariants = {
@@ -134,44 +152,85 @@ export function Services() {
           </motion.p>
         </motion.div>
         
-        {/* Desktop Slider Layout */}
+        {/* Desktop Carousel Layout */}
         <div className="hidden md:block">
-          <div className="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                variants={cardVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                className="flex-shrink-0 w-80 snap-start hover:scale-102 hover:-translate-y-1 transition-transform"
+          <div className="relative">
+            {/* Navigation Buttons */}
+            <Button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-[hsl(213,78%,32%)] rounded-full w-12 h-12 p-0 shadow-lg hover:shadow-xl transition-all duration-300"
+              size="sm"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </Button>
+            
+            <Button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-[hsl(213,78%,32%)] rounded-full w-12 h-12 p-0 shadow-lg hover:shadow-xl transition-all duration-300"
+              size="sm"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </Button>
+
+            {/* Carousel Container */}
+            <div className="mx-12 overflow-hidden">
+              <motion.div 
+                className="flex gap-8 transition-transform duration-500 ease-in-out"
+                animate={{ x: `${currentIndex * -25}%` }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <div className="relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-transform duration-300 group-hover:translate-y-0">
-                    <h3 className="text-xl font-bold mb-2 transition-all duration-300 group-hover:text-yellow-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm opacity-90 mb-4 leading-relaxed transition-opacity duration-300 group-hover:opacity-100">
-                      {service.description}
-                    </p>
-                    <Link href={service.href}>
-                      <Button 
-                        className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/40 group-hover:scale-102"
-                        size="sm"
-                      >
-                        Mehr Infos <ChevronRight className="w-4 h-4 ml-1" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
+                {services.map((service, index) => (
+                  <motion.div
+                    key={service.title}
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="flex-shrink-0 w-80 hover:scale-102 hover:-translate-y-1 transition-transform"
+                  >
+                    <div className="relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+                      
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-transform duration-300 group-hover:translate-y-0">
+                        <h3 className="text-xl font-bold mb-2 transition-all duration-300 group-hover:text-yellow-300">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm opacity-90 mb-4 leading-relaxed transition-opacity duration-300 group-hover:opacity-100">
+                          {service.description}
+                        </p>
+                        <Link href={service.href}>
+                          <Button 
+                            className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/40 group-hover:scale-102"
+                            size="sm"
+                          >
+                            Mehr Infos <ChevronRight className="w-4 h-4 ml-1" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-[hsl(187,96%,43%)] scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 

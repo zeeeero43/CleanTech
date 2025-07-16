@@ -109,7 +109,7 @@ export default function Home() {
     {
       id: "quote",
       question: "Wie erhalte ich ein Angebot?",
-      answer: "Sie können uns über unser Kontaktformular, per Telefon (+49 2271 9877397) oder WhatsApp kontaktieren. Wir erstellen Ihnen gerne ein kostenloses und unverbindliches Angebot."
+      answer: "Sie können uns über unser Kontaktformular, per Telefon (+49 1525 3090504) oder WhatsApp kontaktieren. Wir erstellen Ihnen gerne ein kostenloses und unverbindliches Angebot."
     },
     {
       id: "equipment",
@@ -140,7 +140,7 @@ export default function Home() {
           "description": "Professionelle Reinigungsdienstleistungen in Bergheim und Umgebung seit über 20 Jahren",
           "url": "https://silberreh.de",
           "logo": "https://silberreh.de/images/silberreh-logo.png",
-          "telephone": "+49 2271 9877397",
+          "telephone": "+49 1525 3090504",
           "email": "info@silberreh.de",
           "address": {
             "@type": "PostalAddress",
@@ -434,7 +434,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="tel:+4922719877397"
+                    href="tel:+491525309504"
                     className="bg-[hsl(213,78%,32%)] hover:bg-[hsl(213,78%,37%)] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
                   >
                     Jetzt anrufen

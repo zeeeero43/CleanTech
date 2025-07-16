@@ -11,7 +11,7 @@ export default function Contact() {
     <div className="min-h-screen">
       <SEO
         title="Kontakt - SILBERREH GmbH | Kostenlose Beratung & Angebote | Jetzt anrufen!"
-        description="⭐ Kontaktieren Sie SILBERREH GmbH für professionelle Reinigungsdienstleistungen ⭐ Kostenlose Beratung ⭐ Unverbindliche Angebote ⭐ Schnelle Rückmeldung ⭐ Über 20 Jahre Erfahrung ⭐ Telefon: +49 2271 9877397"
+        description="⭐ Kontaktieren Sie SILBERREH GmbH für professionelle Reinigungsdienstleistungen ⭐ Kostenlose Beratung ⭐ Unverbindliche Angebote ⭐ Schnelle Rückmeldung ⭐ Über 20 Jahre Erfahrung ⭐ Telefon: +49 1525 3090504"
         keywords="Kontakt SILBERREH, Reinigung Angebot, Kostenlose Beratung, Bergheim Reinigungsservice, Reinigungsunternehmen kontaktieren, Angebot anfordern, Reinigungsfirma Bergheim, Reinigungsservice Köln, Reinigungsdienstleister NRW"
         canonical="https://silberreh.de/contact"
         ogType="website"
@@ -24,7 +24,7 @@ export default function Contact() {
           "mainEntity": {
             "@type": "LocalBusiness",
             "name": "SILBERREH GmbH",
-            "telephone": "+49 2271 9877397",
+            "telephone": "+49 1525 3090504",
             "email": "info@silberreh.de",
             "address": {
               "@type": "PostalAddress",
@@ -66,10 +66,10 @@ export default function Contact() {
                 </h3>
                 <p className="text-[hsl(220,9%,43%)] mb-2">Rufen Sie uns an:</p>
                 <a 
-                  href="tel:+4922719877397" 
+                  href="tel:+491525309504" 
                   className="text-[hsl(187,96%,43%)] hover:text-[hsl(213,78%,32%)] font-medium text-lg"
                 >
-                  +49 2271 9877397
+                  +49 1525 3090504
                 </a>
               </CardContent>
             </Card>

@@ -69,7 +69,7 @@ export default function About() {
     <div className="min-h-screen">
       <SEO
         title="Über SILBERREH GmbH - Reinigungsdienstleister aus Bergheim | 20+ Jahre Erfahrung"
-        description="⭐ Über 20 Jahre Erfahrung in der professionellen Reinigung ⭐ Zertifiziert ⭐ Versichert ⭐ Umweltbewusst ⭐ Über 500 zufriedene Kunden ⭐ Ihr vertrauensvoller Partner für Reinigungsdienstleistungen ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
+        description="⭐ Über 20 Jahre Erfahrung in der professionellen Reinigung ⭐ Zertifiziert ⭐ Versichert ⭐ Umweltbewusst ⭐ Über 500 zufriedene Kunden ⭐ Ihr vertrauensvoller Partner für Reinigungsdienstleistungen ⭐ Kostenlose Beratung ☎ +49 1525 3090504"
         keywords="SILBERREH GmbH, Reinigungsunternehmen Bergheim, Reinigungsfirma Geschichte, Zertifizierung, Versicherung, Reinigungsdienstleister NRW, Reinigungsservice Bergheim, Reinigungsunternehmen Köln, professionelle Reinigung, Reinigungsfirma Düsseldorf"
         canonical="https://silberreh.de/about"
         ogType="website"
