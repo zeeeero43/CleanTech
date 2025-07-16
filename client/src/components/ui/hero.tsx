@@ -81,7 +81,7 @@ export function Hero() {
             variants={itemVariants}
           >
             <span className="inline-block">
-              Professionelle Gebäudereiningung
+              Professionelle Gebäudereinigung
             </span>
             <br />
             <motion.span 
