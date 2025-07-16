@@ -66,7 +66,7 @@ export default function Contact() {
                 </h3>
                 <p className="text-[hsl(220,9%,43%)] mb-2">Rufen Sie uns an:</p>
                 <a 
-                  href="tel:+491525309504" 
+                  href="tel:+4915253090504" 
                   className="text-[hsl(187,96%,43%)] hover:text-[hsl(213,78%,32%)] font-medium text-lg"
                 >
                   +49 1525 3090504

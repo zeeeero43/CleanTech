@@ -28,7 +28,7 @@ export default function FAQ() {
     {
       id: "quote",
       question: "Wie erhalte ich ein Angebot?",
-      answer: "Sie können uns über unser Kontaktformular, per Telefon (+49 2271 123456) oder WhatsApp kontaktieren. Wir erstellen Ihnen gerne ein kostenloses und unverbindliches Angebot."
+      answer: "Sie können uns über unser Kontaktformular, per Telefon (+49 1525 3090504) oder WhatsApp kontaktieren. Wir erstellen Ihnen gerne ein kostenloses und unverbindliches Angebot."
     },
     {
       id: "frequency",
@@ -121,7 +121,7 @@ export default function FAQ() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="tel:+492271123456"
+                  href="tel:+4915253090504"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
                 >
                   Jetzt anrufen

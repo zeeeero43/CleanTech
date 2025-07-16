@@ -434,7 +434,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="tel:+491525309504"
+                    href="tel:+4915253090504"
                     className="bg-[hsl(213,78%,32%)] hover:bg-[hsl(213,78%,37%)] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
                   >
                     Jetzt anrufen

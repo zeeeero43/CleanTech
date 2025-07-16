@@ -148,7 +148,7 @@ export function Hero() {
               variant="outline"
               className="bg-white text-[hsl(213,78%,32%)] px-10 py-6 rounded-full font-semibold text-xl border-white hover:bg-[hsl(220,13%,97%)] hover:scale-102 transition-transform"
             >
-              <a href="tel:+491525309504">
+              <a href="tel:+4915253090504">
                 <Phone className="w-6 h-6 mr-2" />
                 Jetzt anrufen
               </a>

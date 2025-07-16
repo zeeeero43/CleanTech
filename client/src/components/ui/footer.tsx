@@ -19,6 +19,21 @@ export function Footer() {
             <h3 className="text-xl font-bold mb-4">Dienstleistungen</h3>
             <ul className="space-y-2 text-white/80">
               <li>
+                <Link href="/services/unterhaltsreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
+                  Unterhalts- & Gewerbereinigung
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/grundreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
+                  Grundreinigung
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/fensterreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
+                  Fenster- & Glasreinigung
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/industriereinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
                   Industriereinigung
                 </Link>
@@ -26,16 +41,6 @@ export function Footer() {
               <li>
                 <Link href="/services/bauschlussreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
                   Bauschlussreinigung
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/unterhaltsreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
-                  Unterhaltsreinigung
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/grundreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
-                  Grundreinigung
                 </Link>
               </li>
             </ul>
