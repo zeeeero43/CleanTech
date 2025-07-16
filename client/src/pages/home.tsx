@@ -311,7 +311,7 @@ export default function Home() {
       <section className="py-20 bg-[hsl(220,13%,97%)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="text-center lg:text-left">
               <h2 className="text-4xl sm:text-5xl font-bold text-[hsl(213,78%,32%)] mb-6">
                 Über SILBERREH
               </h2>

@@ -30,7 +30,7 @@ export function FloatingElements() {
     <>
       {/* Phone Button */}
       <motion.a
-        href="tel:+4922719877397"
+        href="tel:+4915253090504"
         className="floating-whatsapp bg-[hsl(213,78%,32%)] hover:bg-[hsl(213,78%,28%)] text-white p-4 rounded-full shadow-lg transition-colors hover:scale-105"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

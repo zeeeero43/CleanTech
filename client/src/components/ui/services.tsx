@@ -134,43 +134,45 @@ export function Services() {
           </motion.p>
         </motion.div>
         
-        {/* Desktop Grid Layout */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              variants={cardVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              className="hover:scale-102 hover:-translate-y-1 transition-transform"
-            >
-              <div className="relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
-                
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-transform duration-300 group-hover:translate-y-0">
-                  <h3 className="text-xl font-bold mb-2 transition-all duration-300 group-hover:text-yellow-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm opacity-90 mb-4 leading-relaxed transition-opacity duration-300 group-hover:opacity-100">
-                    {service.description}
-                  </p>
-                  <Link href={service.href}>
-                    <Button 
-                      className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/40 group-hover:scale-102"
-                      size="sm"
-                    >
-                      Mehr Infos <ChevronRight className="w-4 h-4 ml-1" />
-                    </Button>
-                  </Link>
+        {/* Desktop Slider Layout */}
+        <div className="hidden md:block">
+          <div className="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                variants={cardVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                className="flex-shrink-0 w-80 snap-start hover:scale-102 hover:-translate-y-1 transition-transform"
+              >
+                <div className="relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(213,78%,32%)]/80 via-[hsl(213,78%,32%)]/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-transform duration-300 group-hover:translate-y-0">
+                    <h3 className="text-xl font-bold mb-2 transition-all duration-300 group-hover:text-yellow-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm opacity-90 mb-4 leading-relaxed transition-opacity duration-300 group-hover:opacity-100">
+                      {service.description}
+                    </p>
+                    <Link href={service.href}>
+                      <Button 
+                        className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/40 group-hover:scale-102"
+                        size="sm"
+                      >
+                        Mehr Infos <ChevronRight className="w-4 h-4 ml-1" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Mobile Horizontal Scroll Layout */}
