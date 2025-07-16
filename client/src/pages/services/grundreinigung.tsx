@@ -1,82 +1,53 @@
-import { useState } from "react";
 import { Navigation } from "@/components/ui/nav";
 import { Footer } from "@/components/ui/footer";
+import { FloatingElements } from "@/components/ui/floating-elements";
 import { ContactForm } from "@/components/ui/contact-form";
-import { SEO } from "@/lib/seo";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, Sparkles, Clock, Shield, ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
-import grundreinigungImage from "@assets/professional-cleaning-service-person-using-steam-cleaner-office-min_1752625794454.jpg";
+import { Badge } from "@/components/ui/badge";
+import { SEO } from "@/lib/seo";
+import { Sparkles, Check, ArrowRight, Shield, Clock, Award, Target, Cog, CheckCircle, Users, Building, Coffee, Computer, ChevronDown } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useState } from "react";
 
 export default function Grundreinigung() {
-  const [openFaq, setOpenFaq] = useState<string | null>(null);
+  const [openFaqItems, setOpenFaqItems] = useState<string[]>([]);
+  
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-  const toggleFaq = (id: string) => {
-    setOpenFaq(openFaq === id ? null : id);
+  const toggleFaqItem = (item: string) => {
+    setOpenFaqItems(prev => 
+      prev.includes(item) 
+        ? prev.filter(i => i !== item)
+        : [...prev, item]
+    );
   };
 
   const features = [
-    {
-      icon: <Sparkles className="w-6 h-6" />,
-      title: "Tiefenreinigung",
-      description: "Gründliche Reinigung aller Bereiche nach höchsten Standards"
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Professionelle Ausrüstung",
-      description: "Moderne Dampfreiniger und Spezialgeräte für optimale Ergebnisse"
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Termingerecht",
-      description: "Zuverlässige Durchführung nach Ihrem Zeitplan"
-    }
-  ];
-
-  const services = [
-    "Komplette Bodenreinigung (alle Oberflächen)",
-    "Sanitärbereich-Tiefenreinigung",
-    "Fenster- und Rahmenreinigung",
+    "Komplette Bodenreinigung aller Oberflächen",
+    "Sanitärbereich-Tiefenreinigung und Desinfektion",
+    "Fenster- und Rahmenreinigung innen/außen",
     "Heizkörper- und Lüftungsreinigung",
-    "Türen und Zargen (innen/außen)",
+    "Türen und Zargen komplett",
     "Lichtschalter und Steckdosen",
     "Decken- und Wandreinigung",
     "Entrümpelung und Entsorgung"
   ];
 
-  const pricingOptions = [
-    {
-      title: "Wohnungen",
-      price: "ab 8,50 €/m²",
-      features: [
-        "Alle Räume inklusive",
-        "Sanitärbereich-Tiefenreinigung",
-        "Fenster innen/außen",
-        "Entrümpelung möglich"
-      ]
-    },
-    {
-      title: "Büros & Praxen",
-      price: "ab 12,00 €/m²",
-      features: [
-        "Arbeitsplätze gründlich",
-        "Sanitäranlagen professionell",
-        "Empfangsbereiche",
-        "Teppich-Tiefenreinigung"
-      ]
-    },
-    {
-      title: "Gewerbeflächen",
-      price: "Individuell",
-      features: [
-        "Maßgeschneiderte Lösung",
-        "Großflächenreinigung",
-        "Spezialausrüstung",
-        "Terminflexibilität"
-      ]
-    }
+  const applications = [
+    "Wohnungen und Häuser",
+    "Büros und Verwaltung",
+    "Praxen und Kliniken",
+    "Geschäfte und Ladenlokale",
+    "Kanzleien und Beratung",
+    "Gastronomie und Hotels",
+    "Immobilien nach Auszug",
+    "Neubau-Endreinigung"
   ];
 
   const faqItems = [
@@ -137,13 +108,13 @@ export default function Grundreinigung() {
           "offers": {
             "@type": "Offer",
             "priceCurrency": "EUR",
-            "price": "ab 8.50",
+            "price": "Individuell",
             "priceSpecification": {
               "@type": "PriceSpecification",
               "valueAddedTaxIncluded": true,
               "priceCurrency": "EUR",
-              "price": "ab 8.50",
-              "unitText": "pro Quadratmeter"
+              "price": "Individuell",
+              "unitText": "nach Aufwand"
             }
           }
         }}
@@ -151,17 +122,17 @@ export default function Grundreinigung() {
       
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[hsl(213,78%,32%)] to-[hsl(213,78%,25%)] text-white py-4">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center pt-20">
+      {/* Hero Section - Increased padding */}
+      <section className="pt-32 pb-24 bg-gradient-to-r from-[hsl(213,78%,32%)] to-[hsl(187,96%,43%)]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white py-4">
+            <Sparkles className="w-16 h-16 mx-auto mb-6" />
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
               Grundreinigung Bergheim
             </h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto mb-6">
-              Professionelle Tiefenreinigung für Wohnungen, Büros und Gewerbeflächen. 
-              Dampfreinigung und Spezialausrüstung für makellose Sauberkeit.
+              Professionelle Grundreinigung und Tiefenreinigung in Bergheim und dem gesamten Rhein-Erft-Kreis. 
+              Intensive Reinigung für Wohnungen, Büros und Gewerbeflächen bei Einzug, Auszug oder besonderen Anlässen.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
@@ -169,36 +140,25 @@ export default function Grundreinigung() {
                 Grundreinigung
               </Badge>
               <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                <Shield className="w-4 h-4 mr-2" />
-                Professionell
+                <Clock className="w-4 h-4 mr-2" />
+                Tiefenreinigung
               </Badge>
               <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                <Clock className="w-4 h-4 mr-2" />
-                Termingerecht
+                <Shield className="w-4 h-4 mr-2" />
+                Vollversichert
               </Badge>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-[hsl(187,96%,43%)] hover:bg-[hsl(187,96%,38%)] text-white border-0 px-8 py-3 text-lg font-semibold"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Kostenlos anfragen
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-[hsl(213,78%,32%)] px-8 py-3 text-lg font-semibold"
-                onClick={() => window.open('tel:+491525309504', '_self')}
-              >
-                +49 1525 3090504
-              </Button>
-            </div>
+            <Button 
+              onClick={scrollToContact}
+              className="bg-white text-[hsl(213,78%,32%)] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
+            >
+              Kostenlose Beratung anfordern
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Us */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -206,68 +166,53 @@ export default function Grundreinigung() {
               Warum SILBERREH für Ihre Grundreinigung?
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Professionelle Tiefenreinigung mit über 20 Jahren Erfahrung - für makellose Sauberkeit
+              Professionelle Grundreinigung mit über 20 Jahren Erfahrung - für makellose Sauberkeit
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {features.map((feature, index) => (
-                <Card key={index} className="glassmorphism border-0 shadow-lg text-center">
-                  <CardContent className="p-6">
-                    <div className="w-16 h-16 bg-[hsl(187,96%,43%)] rounded-full flex items-center justify-center mx-auto mb-4 text-white">
-                      {feature.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+              <Card className="glassmorphism border-0 shadow-lg text-center">
+                <CardContent className="p-6">
+                  <Award className="w-12 h-12 text-[hsl(187,96%,43%)] mb-4 mx-auto" />
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    20+ Jahre Erfahrung
+                  </h3>
+                  <p className="text-gray-600">
+                    Hunderte erfolgreiche Grundreinigungen in Bergheim und dem gesamten Rhein-Erft-Kreis
+                  </p>
+                </CardContent>
+              </Card>
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <img 
-                  src={grundreinigungImage} 
-                  alt="Professionelle Grundreinigung mit Dampfreiniger" 
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-[hsl(213,78%,32%)] mb-4">
-                  Ihre Vorteile bei SILBERREH
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Check className="w-5 h-5 text-[hsl(187,96%,43%)] mt-1 mr-3 flex-shrink-0" />
-                    <span>Über 20 Jahre Erfahrung in der Grundreinigung</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="w-5 h-5 text-[hsl(187,96%,43%)] mt-1 mr-3 flex-shrink-0" />
-                    <span>Moderne Dampfreiniger und Spezialausrüstung</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="w-5 h-5 text-[hsl(187,96%,43%)] mt-1 mr-3 flex-shrink-0" />
-                    <span>Umweltfreundliche Reinigungsmittel</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="w-5 h-5 text-[hsl(187,96%,43%)] mt-1 mr-3 flex-shrink-0" />
-                    <span>Termingerechte und zuverlässige Durchführung</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="w-5 h-5 text-[hsl(187,96%,43%)] mt-1 mr-3 flex-shrink-0" />
-                    <span>Kostenfreie Beratung und Angebotserstellung</span>
-                  </li>
-                </ul>
-              </div>
+              <Card className="glassmorphism border-0 shadow-lg text-center">
+                <CardContent className="p-6">
+                  <Target className="w-12 h-12 text-[hsl(187,96%,43%)] mb-4 mx-auto" />
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    Tiefenreinigung
+                  </h3>
+                  <p className="text-gray-600">
+                    Intensive Reinigung aller Bereiche mit modernster Ausrüstung und Dampfreinigung
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="glassmorphism border-0 shadow-lg text-center">
+                <CardContent className="p-6">
+                  <Users className="w-12 h-12 text-[hsl(187,96%,43%)] mb-4 mx-auto" />
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    Zuverlässiges Team
+                  </h3>
+                  <p className="text-gray-600">
+                    Geschulte und vertrauensvolle Mitarbeiter für Ihre Grundreinigung
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+
+
+      {/* Service Details */}
       <section className="py-20 bg-[hsl(220,13%,97%)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -275,58 +220,151 @@ export default function Grundreinigung() {
               Unsere Grundreinigung-Leistungen
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Komplette Tiefenreinigung für alle Bereiche in Bergheim + 80km Umkreis
+              Professionelle Tiefenreinigung für alle Bereiche in Bergheim + 80km Umkreis
             </p>
             
-            <div className="grid md:grid-cols-2 gap-6">
-              {services.map((service, index) => (
-                <Card key={index} className="glassmorphism border-0 shadow-lg">
-                  <CardContent className="p-6 flex items-center">
-                    <Check className="w-6 h-6 text-[hsl(187,96%,43%)] mr-4 flex-shrink-0" />
-                    <span className="text-gray-700 font-medium">{service}</span>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="glassmorphism border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <Building className="w-12 h-12 text-[hsl(187,96%,43%)] mb-4" />
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    Böden & Oberflächen
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Intensive Reinigung aller Bodenbeläge und Oberflächen
+                  </p>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Parkett, Laminat und Fliesen
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Teppich-Tiefenreinigung
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Naturstein und Linoleum
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Spezialreinigung hartnäckiger Flecken
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="glassmorphism border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <Coffee className="w-12 h-12 text-[hsl(187,96%,43%)] mb-4" />
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    Sanitär & Küche
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Gründliche Reinigung von Sanitäranlagen und Küchenbereichen
+                  </p>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      WC-Anlagen und Badezimmer
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Küchen komplett
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Armaturen und Fliesen
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Desinfektion und Kalklösung
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="glassmorphism border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <Computer className="w-12 h-12 text-[hsl(187,96%,43%)] mb-4" />
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    Fenster & Rahmen
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Komplette Fensterreinigung innen und außen
+                  </p>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Scheiben innen und außen
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Fensterrahmen und Bänke
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Jalousien und Vorhänge
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Rollläden und Markisen
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="glassmorphism border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <Sparkles className="w-12 h-12 text-[hsl(187,96%,43%)] mb-4" />
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    Spezialreinigung
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Zusätzliche Reinigungsleistungen für besondere Ansprüche
+                  </p>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Decken und Wandreinigung
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Heizkörper und Lüftung
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Entrümpelung und Entsorgung
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                      Lichtschalter und Steckdosen
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Applications */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-[hsl(213,78%,32%)] mb-4 text-center">
-              Grundreinigung Preise
+              Anwendungsbereiche
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Transparente Preisgestaltung für alle Arten von Grundreinigung
+              Unsere Grundreinigung ist ideal für diese Bereiche
             </p>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              {pricingOptions.map((option, index) => (
-                <Card key={index} className="glassmorphism border-0 shadow-lg hover:shadow-xl transition-shadow">
-                  <CardContent className="p-8 text-center">
-                    <h3 className="text-2xl font-bold text-[hsl(213,78%,32%)] mb-4">
-                      {option.title}
-                    </h3>
-                    <div className="text-3xl font-bold text-[hsl(187,96%,43%)] mb-6">
-                      {option.price}
-                    </div>
-                    <ul className="space-y-3 mb-8">
-                      {option.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center">
-                          <Check className="w-5 h-5 text-[hsl(187,96%,43%)] mr-3 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button 
-                      className="w-full bg-[hsl(187,96%,43%)] hover:bg-[hsl(187,96%,38%)] text-white"
-                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                    >
-                      Angebot anfordern
-                    </Button>
+            <div className="grid md:grid-cols-2 gap-6">
+              {applications.map((application, index) => (
+                <Card key={index} className="glassmorphism border-0 shadow-lg">
+                  <CardContent className="p-6 flex items-center">
+                    <Check className="w-6 h-6 text-[hsl(187,96%,43%)] mr-4 flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">{application}</span>
                   </CardContent>
                 </Card>
               ))}
@@ -346,29 +384,32 @@ export default function Grundreinigung() {
               Antworten auf die wichtigsten Fragen zur Grundreinigung
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               {faqItems.map((item) => (
-                <Card key={item.id} className="glassmorphism border-0 shadow-lg">
-                  <CardContent className="p-0">
-                    <Button
-                      variant="ghost"
-                      className="w-full h-auto p-6 text-left justify-between hover:bg-transparent"
-                      onClick={() => toggleFaq(item.id)}
+                <Collapsible key={item.id}>
+                  <Card className="glassmorphism border-0 shadow-lg">
+                    <CollapsibleTrigger 
+                      className="w-full text-left p-6 hover:bg-transparent"
+                      onClick={() => toggleFaqItem(item.id)}
                     >
-                      <span className="text-lg font-semibold text-[hsl(213,78%,32%)]">
-                        {item.question}
-                      </span>
-                      <ChevronDown className={`w-5 h-5 text-[hsl(187,96%,43%)] transition-transform ${
-                        openFaq === item.id ? 'rotate-180' : ''
-                      }`} />
-                    </Button>
-                    {openFaq === item.id && (
-                      <div className="px-6 pb-6 text-gray-600">
-                        {item.answer}
+                      <div className="flex items-center justify-between">
+                        <span className="text-lg font-semibold text-[hsl(213,78%,32%)]">
+                          {item.question}
+                        </span>
+                        <ChevronDown className={`w-5 h-5 text-[hsl(187,96%,43%)] transition-transform ${
+                          openFaqItems.includes(item.id) ? 'rotate-180' : ''
+                        }`} />
                       </div>
+                    </CollapsibleTrigger>
+                    {openFaqItems.includes(item.id) && (
+                      <CollapsibleContent className="px-6 pb-6">
+                        <p className="text-gray-600 leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </CollapsibleContent>
                     )}
-                  </CardContent>
-                </Card>
+                  </Card>
+                </Collapsible>
               ))}
             </div>
           </div>
@@ -392,6 +433,7 @@ export default function Grundreinigung() {
       </section>
 
       <Footer />
+      <FloatingElements />
     </div>
   );
 }
