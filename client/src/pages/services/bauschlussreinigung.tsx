@@ -77,7 +77,7 @@ export default function Bauschlussreinigung() {
     <div className="min-h-screen">
       <SEO
         title="Bauschlussreinigung Bergheim - Professionelle Endreinigung | SILBERREH GmbH | #1 Bauendreinigung"
-        description="⭐ Professionelle Bauschlussreinigung in Bergheim, Köln & Düsseldorf ⭐ Komplette Endreinigung ⭐ Wertstofftrennung ⭐ Übergabebereit ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
+        description="⭐ Professionelle Bauschlussreinigung in Bergheim, Köln & Düsseldorf ⭐ Komplette Endreinigung ⭐ Wertstofftrennung ⭐ Übergabebereit ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 1525 3090504"
         keywords="Bauschlussreinigung Bergheim, Endreinigung Köln, Bauendreinigung Düsseldorf, Rohbaureinigung NRW, Wertstofftrennung, Bauschlussreinigung Preise, Bauschlussreinigung Angebot, Bauschlussreinigung Kosten, Bauschlussreinigung übergabebereit"
         canonical="https://silberreh.de/services/bauschlussreinigung"
         ogType="service"
@@ -91,7 +91,7 @@ export default function Bauschlussreinigung() {
           "provider": {
             "@type": "LocalBusiness",
             "name": "SILBERREH GmbH",
-            "telephone": "+49 2271 9877397",
+            "telephone": "+49 1525 3090504",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Kentener Wiesen 39a",

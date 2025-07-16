@@ -8,6 +8,7 @@ import { useRef } from "react";
 import industriereinigungImage from "@assets/professioneller-industriereiniger-im-einheitlichen-schutzboden-der-lebensmittelverarbeitungsanlage-min_1752416442442.jpg";
 import bauschlussreinigungImage from "@assets/mannlicher-arbeiter-der-auf-der-baustelle-eine-betonestrichmaschine-verwendet-min_1752416454977.jpg";
 import bueroreinigungImage from "@assets/mittlere-aufnahme-von-menschen-die-gebaude-reinigen-min_1752416458056.jpg";
+import grundreinigungImage from "@assets/professional-cleaning-service-person-using-steam-cleaner-office-min_1752625794454.jpg";
 import fensterreinigungImage from "@assets/mittlere-aufnahme-von-menschen-die-gebaude-reinigen (1)-min (1)_1752416463220.jpg";
 
 export function Services() {
@@ -17,10 +18,17 @@ export function Services() {
   const services = [
     {
       image: bueroreinigungImage,
-      title: "Büro- & Gewerbereinigung",
+      title: "Unterhalts- & Gewerbereinigung",
       description: "Regelmäßige Reinigung für Büros, Praxen und Geschäfte. Flexible Zeiten und individuelle Reinigungspläne.",
-      href: "/services/bueroreinigung",
+      href: "/services/unterhaltsreinigung",
       icon: "🏢"
+    },
+    {
+      image: grundreinigungImage,
+      title: "Grundreinigung",
+      description: "Tiefenreinigung für Wohnungen, Büros und Gewerbe. Professionelle Dampfreinigung für makellose Sauberkeit.",
+      href: "/services/grundreinigung",
+      icon: "✨"
     },
     {
       image: fensterreinigungImage,
@@ -122,7 +130,7 @@ export function Services() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Professionelle Gebäudereiningung für jeden Bedarf - von der Industrie bis zum Büro
+            Professionelle Gebäudereinigung für jeden Bedarf - von der Industrie bis zum Büro
           </motion.p>
         </motion.div>
         

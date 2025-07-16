@@ -10,6 +10,27 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 2025)
 
+### Grundreinigung Service Addition and Business Information Updates
+- **Date**: July 16, 2025
+- **Changes**:
+  - **New Service**: Added comprehensive Grundreinigung service page with full SEO optimization and professional content
+  - **Service Integration**: Added Grundreinigung to services component, footer navigation, and sitemap
+  - **Business Information**: Updated Impressum with official USt-ID: DE3607078946
+  - **Privacy Policy**: Added Freepik attribution to Datenschutz page acknowledging image sources
+  - **Bug Fixes**: Corrected spelling error "gebäudereiningung" → "gebäudereinigung" across all components
+  - **Footer Navigation**: Enhanced with proper Grundreinigung link and improved scroll behavior
+  - **Technical Improvements**: Added scroll-padding-top and z-index fixes for better footer interaction
+
+### Service Updates and Contact Information Changes
+- **Date**: July 15, 2025
+- **Changes**:
+  - **Phone Number Update**: Changed all phone numbers from +49 2271 9877397 to +49 1525 3090504 across entire website
+  - **Service Rename**: Changed "Büroreinigung" to "Unterhaltsreinigung" throughout the website
+  - **Route Update**: Updated service route from /services/bueroreinigung to /services/unterhaltsreinigung
+  - **Footer Navigation**: Removed Fensterreinigung from footer, updated to link to Unterhaltsreinigung
+  - **SEO Updates**: Updated all meta descriptions, schema data, and canonical URLs with new phone number
+  - **File Restructure**: Renamed bueroreinigung.tsx to unterhaltsreinigung.tsx and updated all references
+
 ### Comprehensive SEO Upgrade and Legal Pages Completion
 - **Date**: July 15, 2025
 - **Changes**:

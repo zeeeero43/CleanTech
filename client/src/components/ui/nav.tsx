@@ -127,11 +127,11 @@ export function Navigation() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <a 
-              href="tel:+4922719877397" 
+              href="tel:+4915253090504" 
               className="flex items-center space-x-2 text-[hsl(213,78%,32%)] hover:text-[hsl(187,96%,43%)] transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-medium">+49 2271 9877397</span>
+              <span className="font-medium">+49 1525 3090504</span>
             </a>
             <Button 
               onClick={handleQuoteClick}
@@ -180,11 +180,11 @@ export function Navigation() {
                 
                 <div className="pt-6 border-t border-gray-200 space-y-6">
                   <a 
-                    href="tel:+4922719877397" 
+                    href="tel:+4915253090504" 
                     className="flex items-center space-x-2 text-[hsl(213,78%,32%)] hover:text-[hsl(187,96%,43%)] transition-colors"
                   >
                     <Phone className="w-4 h-4" />
-                    <span className="font-medium">+49 2271 9877397</span>
+                    <span className="font-medium">+49 1525 3090504</span>
                   </a>
                   <Button 
                     onClick={handleQuoteClick}

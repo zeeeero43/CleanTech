@@ -15,7 +15,8 @@ export default function Sitemap() {
     {
       title: "Reinigungsdienstleistungen",
       links: [
-        { href: "/services/bueroreinigung", label: "Büro- & Gewerbereinigung", icon: <Building className="w-4 h-4" /> },
+        { href: "/services/unterhaltsreinigung", label: "Unterhalts- & Gewerbereinigung", icon: <Building className="w-4 h-4" /> },
+        { href: "/services/grundreinigung", label: "Grundreinigung", icon: <Building className="w-4 h-4" /> },
         { href: "/services/fensterreinigung", label: "Fenster- & Glasreinigung", icon: <GlassWater className="w-4 h-4" /> },
         { href: "/services/industriereinigung", label: "Industriereinigung", icon: <Factory className="w-4 h-4" /> },
         { href: "/services/bauschlussreinigung", label: "Bauschlussreinigung", icon: <HardHat className="w-4 h-4" /> },

@@ -32,9 +32,9 @@ export function ServicesBackup() {
     },
     {
       image: bueroreinigungImage,
-      title: "Büro- & Gewerbereinigung",
+      title: "Unterhalts- & Gewerbereinigung",
       description: "Regelmäßige Reinigung für Büros, Praxen und Geschäfte. Flexible Zeiten und individuelle Reinigungspläne.",
-      href: "/services/bueroreinigung",
+      href: "/services/unterhaltsreinigung",
       icon: "🏢"
     },
     {
@@ -123,7 +123,7 @@ export function ServicesBackup() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Professionelle Gebäudereiningung für jeden Bedarf - von der Industrie bis zum Büro
+            Professionelle Gebäudereinigung für jeden Bedarf - von der Industrie bis zum Büro
           </motion.p>
         </motion.div>
         

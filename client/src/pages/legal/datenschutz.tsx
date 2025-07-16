@@ -99,7 +99,7 @@ export default function Datenschutz() {
                     SILBERREH GmbH<br />
                     Kentener Wiesen 39a<br />
                     50126 Bergheim<br />
-                    Telefon: +49 2271 9877397<br />
+                    Telefon: +49 1525 3090504<br />
                     E-Mail: info@silberreh.de
                   </p>
                   
@@ -123,7 +123,21 @@ export default function Datenschutz() {
                   </p>
                   
                   <h2 className="text-2xl font-bold text-[hsl(213,78%,32%)] mb-4">
-                    3. Datenerfassung auf unserer Website
+                    3. Bildmaterial und Urheberrechte
+                  </h2>
+                  
+                  <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">
+                    Verwendung von Bildmaterial
+                  </h3>
+                  <p className="text-[hsl(220,9%,43%)] mb-6">
+                    Teile des auf dieser Website verwendeten Bildmaterials stammen von Freepik.com. 
+                    Wir danken Freepik für die Bereitstellung hochwertiger Bilder, die zur visuellen 
+                    Gestaltung unserer Website beitragen. Alle verwendeten Bilder unterliegen den 
+                    entsprechenden Lizenzbestimmungen.
+                  </p>
+                  
+                  <h2 className="text-2xl font-bold text-[hsl(213,78%,32%)] mb-4">
+                    4. Datenerfassung auf unserer Website
                   </h2>
                   
                   <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">

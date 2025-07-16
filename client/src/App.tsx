@@ -10,7 +10,8 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Industriereinigung from "@/pages/services/industriereinigung";
 import Bauschlussreinigung from "@/pages/services/bauschlussreinigung";
-import Bueroreinigung from "@/pages/services/bueroreinigung";
+import Unterhaltsreinigung from "@/pages/services/unterhaltsreinigung";
+import Grundreinigung from "@/pages/services/grundreinigung";
 import Fensterreinigung from "@/pages/services/fensterreinigung";
 import Impressum from "@/pages/legal/impressum";
 import Datenschutz from "@/pages/legal/datenschutz";
@@ -29,7 +30,8 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/services/industriereinigung" component={Industriereinigung} />
       <Route path="/services/bauschlussreinigung" component={Bauschlussreinigung} />
-      <Route path="/services/bueroreinigung" component={Bueroreinigung} />
+      <Route path="/services/unterhaltsreinigung" component={Unterhaltsreinigung} />
+      <Route path="/services/grundreinigung" component={Grundreinigung} />
       <Route path="/services/fensterreinigung" component={Fensterreinigung} />
       <Route path="/legal/impressum" component={Impressum} />
       <Route path="/legal/datenschutz" component={Datenschutz} />

@@ -82,7 +82,7 @@ export default function Impressum() {
                     Kontakt:
                   </h3>
                   <p className="text-[hsl(220,9%,43%)] mb-8">
-                    Telefon: +49 2271 9877397<br />
+                    Telefon: +49 1525 3090504<br />
                     E-Mail: info@silberreh.de
                   </p>
                   
@@ -107,7 +107,7 @@ export default function Impressum() {
                     Umsatzsteuer-ID:
                   </h3>
                   <p className="text-[hsl(220,9%,43%)] mb-8">
-                    Umsatzsteuer-Identifikationsnummer nach §27a UStG: wird nachgereicht
+                    Umsatzsteuer-Identifikationsnummer nach §27a UStG: DE3607078946
                   </p>
                   
                   <h3 className="text-xl font-bold text-[hsl(213,78%,32%)] mb-3">

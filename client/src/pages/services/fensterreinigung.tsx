@@ -77,7 +77,7 @@ export default function Fensterreinigung() {
     <div className="min-h-screen">
       <SEO
         title="Fensterreinigung Bergheim - Professionelle Glasreinigung | SILBERREH GmbH | #1 Scheibenreinigung"
-        description="⭐ Professionelle Fensterreinigung in Bergheim, Köln & Düsseldorf ⭐ Streifenfreie Ergebnisse ⭐ Osmose-Technik ⭐ Hochwertige Ausrüstung ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
+        description="⭐ Professionelle Fensterreinigung in Bergheim, Köln & Düsseldorf ⭐ Streifenfreie Ergebnisse ⭐ Osmose-Technik ⭐ Hochwertige Ausrüstung ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 1525 3090504"
         keywords="Fensterreinigung Bergheim, Scheibenreinigung Köln, Glasreinigung Düsseldorf, Schaufensterreinigung NRW, Bürofenster reinigen, Fensterreinigung Preise, Fensterreinigung Angebot, Fensterreinigung Kosten, Fensterreinigung Osmose, Fensterreinigung professionell"
         canonical="https://silberreh.de/services/fensterreinigung"
         ogType="service"
@@ -91,7 +91,7 @@ export default function Fensterreinigung() {
           "provider": {
             "@type": "LocalBusiness",
             "name": "SILBERREH GmbH",
-            "telephone": "+49 2271 9877397",
+            "telephone": "+49 1525 3090504",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Kentener Wiesen 39a",

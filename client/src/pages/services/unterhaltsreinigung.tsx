@@ -10,7 +10,7 @@ import { Building, Check, ArrowRight, Shield, Clock, Award, Target, Cog, CheckCi
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
 
-export default function Bueroreinigung() {
+export default function Unterhaltsreinigung() {
   const [openFaqItems, setOpenFaqItems] = useState<string[]>([]);
   
   const scrollToContact = () => {
@@ -53,7 +53,7 @@ export default function Bueroreinigung() {
   const faqItems = [
     {
       id: "frequency",
-      question: "Wie oft sollte eine Büroreinigung durchgeführt werden?",
+      question: "Wie oft sollte eine Unterhaltsreinigung durchgeführt werden?",
       answer: "Das hängt von der Bürogröße und Mitarbeiterzahl ab. Wir empfehlen tägliche Reinigung für größere Büros und wöchentliche Reinigung für kleinere Büros."
     },
     {
@@ -76,22 +76,22 @@ export default function Bueroreinigung() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Büroreinigung Bergheim - Professionelle Gewerbereinigung | SILBERREH GmbH | #1 Reinigungsservice"
-        description="⭐ Professionelle Büroreinigung in Bergheim, Köln & Düsseldorf ⭐ Flexible Zeiten ⭐ Umweltfreundlich ⭐ Zertifiziert ⭐ Versichert ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
-        keywords="Büroreinigung Bergheim, Gewerbereinigung Köln, Praxisreinigung Düsseldorf, Geschäftsreinigung NRW, Unterhaltsreinigung Rhein-Erft-Kreis, Büroreinigung täglich, Büroreinigung wöchentlich, Büroreinigung monatlich, Reinigungsservice Büro, Reinigungsfirma Gewerbe, Büroreinigung Angebot, Büroreinigung Kosten"
-        canonical="https://silberreh.de/services/bueroreinigung"
+        title="Unterhaltsreinigung Bergheim - Professionelle Gewerbereinigung | SILBERREH GmbH | #1 Reinigungsservice"
+        description="⭐ Professionelle Unterhaltsreinigung in Bergheim, Köln & Düsseldorf ⭐ Flexible Zeiten ⭐ Umweltfreundlich ⭐ Zertifiziert ⭐ Versichert ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 1525 3090504"
+        keywords="Unterhaltsreinigung Bergheim, Gewerbereinigung Köln, Praxisreinigung Düsseldorf, Geschäftsreinigung NRW, Unterhaltsreinigung Rhein-Erft-Kreis, Unterhaltsreinigung täglich, Unterhaltsreinigung wöchentlich, Unterhaltsreinigung monatlich, Reinigungsservice Büro, Reinigungsfirma Gewerbe, Unterhaltsreinigung Angebot, Unterhaltsreinigung Kosten"
+        canonical="https://silberreh.de/services/unterhaltsreinigung"
         ogType="service"
-        ogImage="https://silberreh.de/images/bueroreinigung-service.jpg"
+        ogImage="https://silberreh.de/images/unterhaltsreinigung-service.jpg"
         schemaData={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Büroreinigung Bergheim",
-          "description": "Professionelle Büro- und Gewerbereinigung in Bergheim, Köln und Düsseldorf",
-          "serviceType": "Büroreinigung",
+          "name": "Unterhaltsreinigung Bergheim",
+          "description": "Professionelle Unterhalts- und Gewerbereinigung in Bergheim, Köln und Düsseldorf",
+          "serviceType": "Unterhaltsreinigung",
           "provider": {
             "@type": "LocalBusiness",
             "name": "SILBERREH GmbH",
-            "telephone": "+49 2271 9877397",
+            "telephone": "+49 1525 3090504",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Kentener Wiesen 39a",
@@ -127,16 +127,16 @@ export default function Bueroreinigung() {
           <div className="text-center text-white py-4">
             <Building className="w-16 h-16 mx-auto mb-6" />
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Büroreinigung Bergheim
+              Unterhaltsreinigung Bergheim
             </h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto mb-6">
-              Professionelle Büro- und Gewerbereinigung in Bergheim und dem gesamten Rhein-Erft-Kreis. 
+              Professionelle Unterhalts- und Gewerbereinigung in Bergheim und dem gesamten Rhein-Erft-Kreis. 
               Regelmäßige Reinigung für Büros, Praxen und Geschäfte mit flexiblen Zeiten.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
                 <Building className="w-4 h-4 mr-2" />
-                Büroreinigung
+                Unterhaltsreinigung
               </Badge>
               <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
                 <Users className="w-4 h-4 mr-2" />
@@ -162,10 +162,10 @@ export default function Bueroreinigung() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-[hsl(213,78%,32%)] mb-4 text-center">
-              Warum SILBERREH für Ihre Büroreinigung?
+              Warum SILBERREH für Ihre Unterhaltsreinigung?
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
-              Professionelle Büroreinigung mit über 20 Jahren Erfahrung - für ein sauberes Arbeitsumfeld
+              Professionelle Unterhaltsreinigung mit über 20 Jahren Erfahrung - für ein sauberes Arbeitsumfeld
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -214,7 +214,7 @@ export default function Bueroreinigung() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-[hsl(213,78%,32%)] mb-4 text-center">
-              Unsere Büroreinigung-Leistungen
+              Unsere Unterhaltsreinigung-Leistungen
             </h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
               Professionelle Gewerbereinigung für alle Bürobereiche in Bergheim + 80km Umkreis

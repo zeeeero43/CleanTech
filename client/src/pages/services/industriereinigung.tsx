@@ -77,7 +77,7 @@ export default function Industriereinigung() {
     <div className="min-h-screen">
       <SEO
         title="Industriereinigung Bergheim - Professionelle Maschinenreinigung | SILBERREH GmbH | #1 Industrieservice"
-        description="⭐ Professionelle Industriereinigung in Bergheim, Köln & Düsseldorf ⭐ Maschinenreinigung ⭐ Hochdruckreinigung ⭐ Anlagenpflege ⭐ 24/7 Notdienst ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 2271 9877397"
+        description="⭐ Professionelle Industriereinigung in Bergheim, Köln & Düsseldorf ⭐ Maschinenreinigung ⭐ Hochdruckreinigung ⭐ Anlagenpflege ⭐ 24/7 Notdienst ⭐ Über 20 Jahre Erfahrung ⭐ Kostenlose Beratung ☎ +49 1525 3090504"
         keywords="Industriereinigung Bergheim, Maschinenreinigung Köln, Hochdruckreinigung Düsseldorf, Anlagenpflege NRW, Produktionsanlagen reinigen, Industriereinigung Preise, Industriereinigung Angebot, Industriereinigung Kosten, Industriereinigung Notdienst, Industriereinigung professionell"
         canonical="https://silberreh.de/services/industriereinigung"
         ogType="service"
@@ -91,7 +91,7 @@ export default function Industriereinigung() {
           "provider": {
             "@type": "LocalBusiness",
             "name": "SILBERREH GmbH",
-            "telephone": "+49 2271 9877397",
+            "telephone": "+49 1525 3090504",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Kentener Wiesen 39a",

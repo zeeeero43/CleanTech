@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[hsl(213,78%,32%)] text-white py-12">
+    <footer className="bg-[hsl(213,78%,32%)] text-white py-12 relative z-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -29,19 +29,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services/bueroreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
-                  Büroreinigung
+                <Link href="/services/unterhaltsreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
+                  Unterhaltsreinigung
                 </Link>
               </li>
               <li>
-                <Link href="/services/fensterreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
-                  Fensterreinigung
-                </Link>
-              </li>
-              <li>
-                <button className="hover:text-[hsl(187,96%,43%)] transition-colors text-left">
+                <Link href="/services/grundreinigung" className="hover:text-[hsl(187,96%,43%)] transition-colors">
                   Grundreinigung
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -52,8 +47,8 @@ export function Footer() {
             <div className="space-y-2 text-white/80">
               <div className="flex items-center">
                 <Phone className="mr-2 flex-shrink-0" size={16} />
-                <a href="tel:+4922719877397" className="hover:text-[hsl(187,96%,43%)] transition-colors">
-                  +49 2271 9877397
+                <a href="tel:+4915253090504" className="hover:text-[hsl(187,96%,43%)] transition-colors">
+                  +49 1525 3090504
                 </a>
               </div>
               <div className="flex items-center">
